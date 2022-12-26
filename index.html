@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/app.js"></script>
+
+  <!--<link rel="stylesheet" href="css/backgroundAnimeted.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Registro de estudiante</title>
+
+ 
+
+  <!-- <script type="module" src="/firebase/firebaseConfig.js"></script> -->
+
+</head>
+
+<body>
+
+
+  <!--*******************FONDO***********************************
+<div class="ocean">
+    <div class="wave"></div>
+    <div class="wave"></div>
+  </div> -->
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          <img src="img/doguitoadm.svg" alt="" width="112" height="28"> </a>
+        <a class="navbar-item" href="index.html">Registro</a>
+        <a class="navbar-item" href="Calificaciones.html">Calificaciones</a>
+        <a class="navbar-item" href="asistencia.html">Asistencia</a>
+        </a>
+
+
+
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+
+          <!-- <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span> -->
+        </a>
+      </div>
+
+
+    </nav>
+
+  </header>
+  <main class="main-content">
+    <div class="crud-container">
+      <div class="crud-header">
+        <h1>Estudiantes Registrados</h1>
+        <button class="button is-info" id="openRegisterModal">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Nuevo Estudiante</span>
+        </button>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>-</th>
+            <th>Nombre</th>
+            <th>Primer Apellido</th>
+            <th>Segundo Apellido</th>
+
+            <th>Telefono</th>
+            <th>Email</th>
+            <th>Género</th>
+            <th>Opciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Helen</td>
+            <td>Gonzalez</td>
+            <td>Frias</td>
+            <td>809-555-5555</td>
+            <td>Hty5@gmail.com</td>
+            <th>Femenino</th>
+            <td>
+              <button class="button is-link">
+                <i class="fa-sharp fa-solid fa-pen-to-square"></i>
+              </button>
+
+              <button class="button is-danger">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+
+
+
+            </td>
+          <tr>
+
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <!--*******************MODAL**********************************-->
+  <div class="modal" id="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Registrar Nuevo Estudiante</p>
+        <button class="delete" aria-label="close" id="closeRegisterModal"></button>
+      </header>
+      <section class="modal-card-body">
+
+        <!-- Formulario ... -->
+        <form action="" id="registerForm">
+          <div class="field">
+            <label class="label">Nombre Alumno</label>
+            <div class="control">
+              <input class="input" type="text" name="nombreAlumno" placeholder="Nombre del alumno">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Primer Apellido</label>
+            <div class="control">
+              <input class="input" type="text" name="pA" placeholder="Primer Apellido">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Segundo Apellido</label>
+            <div class="control">
+              <input class="input" type="text" name="sA" placeholder="Segundo Apellido">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Teléfono</label>
+            <div class="control has-icons-left ">
+              <input class="input " type="tel" name="tel" placeholder="+809-000-0000">
+
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <p class="help ">Número de Teléfono</p>
+          </div>
+
+          <div class="field">
+            <label class="label">Email</label>
+            <div class="control has-icons-left ">
+              <input class="input " type="tel" name="email" placeholder="Correo eletronico">
+
+              <span class="icon is-small is-left">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="field">
+              <label class="label">Género</label>
+              <div class="control">
+                <div class="select">
+                  <select name="generos">
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Descripción</label>
+              <div class="control">
+                <textarea name="desc" class="textarea" placeholder="Información Adicional"></textarea>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <label class="checkbox">
+
+              </div>
+            </div>
+
+            <h1>holaaaa</h1>
+            <!-- Formulario ... -->
+        </form>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-danger" id="cancelar">
+          <span> Cancelar </span>
+        </button>
+        <button type="submit" class="button is-info">
+          <i class="fa-sharp fa-solid fa-check-double"></i>
+          <span> Registrar </span>
+        </button>
+
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

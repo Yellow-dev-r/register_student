@@ -1,3 +1,5 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'students.freezed.dart';
 part 'students.g.dart';
 

@@ -7,6 +7,7 @@ part 'students.g.dart';
 class StudentsDto with _$StudentsDto {
   factory StudentsDto({
     required String id,
+    required String order,
     required String name,
     required String lastName,
     required String phone,

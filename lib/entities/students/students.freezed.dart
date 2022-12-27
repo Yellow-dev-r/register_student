@@ -21,6 +21,7 @@ StudentsDto _$StudentsDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StudentsDto {
   String get id => throw _privateConstructorUsedError;
+  String get order => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $StudentsDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String order,
       String name,
       String lastName,
       String phone,
@@ -62,6 +64,7 @@ class _$StudentsDtoCopyWithImpl<$Res, $Val extends StudentsDto>
   @override
   $Res call({
     Object? id = null,
+    Object? order = null,
     Object? name = null,
     Object? lastName = null,
     Object? phone = null,
@@ -72,6 +75,10 @@ class _$StudentsDtoCopyWithImpl<$Res, $Val extends StudentsDto>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -107,6 +114,7 @@ abstract class _$$_StudentsDtoCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
+      String order,
       String name,
       String lastName,
       String phone,
@@ -126,6 +134,7 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? order = null,
     Object? name = null,
     Object? lastName = null,
     Object? phone = null,
@@ -136,6 +145,10 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      order: null == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -166,6 +179,7 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
 class _$_StudentsDto implements _StudentsDto {
   _$_StudentsDto(
       {required this.id,
+      required this.order,
       required this.name,
       required this.lastName,
       required this.phone,
@@ -177,6 +191,8 @@ class _$_StudentsDto implements _StudentsDto {
 
   @override
   final String id;
+  @override
+  final String order;
   @override
   final String name;
   @override
@@ -190,7 +206,7 @@ class _$_StudentsDto implements _StudentsDto {
 
   @override
   String toString() {
-    return 'StudentsDto(id: $id, name: $name, lastName: $lastName, phone: $phone, email: $email, gender: $gender)';
+    return 'StudentsDto(id: $id, order: $order, name: $name, lastName: $lastName, phone: $phone, email: $email, gender: $gender)';
   }
 
   @override
@@ -199,6 +215,7 @@ class _$_StudentsDto implements _StudentsDto {
         (other.runtimeType == runtimeType &&
             other is _$_StudentsDto &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.order, order) || other.order == order) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
@@ -210,7 +227,7 @@ class _$_StudentsDto implements _StudentsDto {
   @JsonKey(ignore: true)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, id, name, lastName, phone, email, gender);
+      Object.hash(runtimeType, id, order, name, lastName, phone, email, gender);
 
   @JsonKey(ignore: true)
   @override
@@ -229,6 +246,7 @@ class _$_StudentsDto implements _StudentsDto {
 abstract class _StudentsDto implements StudentsDto {
   factory _StudentsDto(
       {required final String id,
+      required final String order,
       required final String name,
       required final String lastName,
       required final String phone,
@@ -240,6 +258,8 @@ abstract class _StudentsDto implements StudentsDto {
 
   @override
   String get id;
+  @override
+  String get order;
   @override
   String get name;
   @override

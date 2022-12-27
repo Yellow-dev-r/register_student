@@ -13,6 +13,14 @@ const List<String> tableList = [
   'Género',
   'Opciones'
 ];
+const List<String> registerList = [
+  'Nombre',
+  'Apellido',
+  'Teléfono',
+  'Email',
+  'Género',
+  'Descripcion'
+];
 
 ///[Cloud]
 

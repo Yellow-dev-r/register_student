@@ -8,9 +8,12 @@ const List<String> tableList = [
   'id',
   'Nombre',
   'Primer Apellido',
-  'Segundo Apellido',
   'Teléfono',
   'Email',
   'Género',
   'Opciones'
 ];
+
+///[Cloud]
+
+const String collectionPath = 'student';

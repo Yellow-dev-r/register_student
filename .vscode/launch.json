@@ -6,7 +6,7 @@
     "configurations": [
         {
      
-            "name": "register_student (release mode)",
+            "name": "register_student (debug mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "debug",

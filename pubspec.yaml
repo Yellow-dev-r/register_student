@@ -22,6 +22,10 @@ dependencies:
   # auto-route
   auto_route: ^5.0.4
 
+  #media
+  flutter_svg: ^1.1.6
+
+
   dartz: ^0.10.1
   freezed_annotation: ^2.0.3
   json_annotation: ^4.7.0
@@ -42,3 +46,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  - assets: assets/
+

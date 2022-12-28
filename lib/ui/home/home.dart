@@ -1,12 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:x_mansion/entities/students/students.dart';
 import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/form.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -17,6 +15,8 @@ class HomePage extends ConsumerStatefulWidget {
 
 class _MyHomePage extends ConsumerState<HomePage> {
   StudentsRepository data = StudentsRepository();
+ 
+
 
   void updateTofirebase() async {
     StudentsDto studentsDto = StudentsDto(
@@ -34,6 +34,7 @@ class _MyHomePage extends ConsumerState<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final labelTest = 'this is a test of google fonts';
     // updateTofirebase();
     final Future<List<StudentsDto>> studentList = data.getStudentsList();
 
@@ -62,14 +63,28 @@ class _MyHomePage extends ConsumerState<HomePage> {
                       showDialog(
                           context: context,
                           builder: ((context) => FormBuilder(
-                            title: Text('Registro'),
-                          )));
+                                title: Text('Registro'),
+                              )));
                     },
                     child: Row(
                       children: [Icon(Icons.add), Text('Nuevo estudiante')],
                     )),
               ],
             ),
+            Column(children: [
+              Text(
+                style: GoogleFonts.nosifer(fontSize: 48),
+                labelTest,
+              ),
+              Text(
+                style: GoogleFonts.comicNeue(fontSize: 48),
+                labelTest,
+              ),
+              Text(
+                style: GoogleFonts.acme(fontSize: 48),
+                labelTest,
+              )
+            ]),
             FutureBuilder(
                 future: studentList,
                 builder: (context, snapshot) {

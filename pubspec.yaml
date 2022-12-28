@@ -25,6 +25,10 @@ dependencies:
   #media
   flutter_svg: ^1.1.6
 
+  #theme
+  google_fonts: ^3.0.1
+
+
 
   dartz: ^0.10.1
   freezed_annotation: ^2.0.3

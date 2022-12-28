@@ -13,6 +13,8 @@ class StudentsDto with _$StudentsDto {
     required String phone,
     required String email,
     required String gender,
+    //TODO: assitance logic
+    // required AssitanceDto assitance,
   }) = _StudentsDto;
   factory StudentsDto.fromJson(Map<String, dynamic> json) =>
       _$StudentsDtoFromJson(json);

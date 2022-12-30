@@ -21,10 +21,10 @@ class AppRouter extends _i2.RootStackRouter {
 
   @override
   final Map<String, _i2.PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) {
+    HomeScreenRoute.name: (routeData) {
       return _i2.AdaptivePage<dynamic>(
         routeData: routeData,
-        child: const _i1.HomePage(),
+        child: _i1.HomeScreenView(),
       );
     }
   };
@@ -38,20 +38,20 @@ class AppRouter extends _i2.RootStackRouter {
           fullMatch: true,
         ),
         _i2.RouteConfig(
-          HomeRoute.name,
+          HomeScreenRoute.name,
           path: '/landing',
         ),
       ];
 }
 
 /// generated route for
-/// [_i1.HomePage]
-class HomeRoute extends _i2.PageRouteInfo<void> {
-  const HomeRoute()
+/// [_i1.HomeScreenView]
+class HomeScreenRoute extends _i2.PageRouteInfo<void> {
+  const HomeScreenRoute()
       : super(
-          HomeRoute.name,
+          HomeScreenRoute.name,
           path: '/landing',
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'HomeScreenRoute';
 }

@@ -7,12 +7,13 @@ part 'students.g.dart';
 class StudentsDto with _$StudentsDto {
   factory StudentsDto({
     required String id,
-    required String order,
     required String name,
     required String lastName,
     required String phone,
     required String email,
     required String gender,
+    required DateTime registeredDate,
+    required String studentDescription,
     //TODO: assitance logic
     // required AssitanceDto assitance,
   }) = _StudentsDto;

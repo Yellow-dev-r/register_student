@@ -1,6 +1,6 @@
 # x_mansion
 
-A new Flutter project.
+The school of gifted youngstar is a web app made to manage simple request from a school, such as assitance, grades and student records.
 
 ## Getting Started
 

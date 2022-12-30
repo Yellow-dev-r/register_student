@@ -7,12 +7,13 @@ FirebaseFirestore firestore = FirebaseFirestore.instance;
 abstract class StudentsRepositoryProtocol {
   Future<void> getStudentToDB(StudentsDto student);
   Future<List<StudentsDto>> getStudentsList();
-  Future<void> deleteStudent(String id);
+  Future<void> deleteStudent(String studentId);
 }
 
 class StudentsRepository extends StudentsRepositoryProtocol {
   Future<void> getStudentToDB(StudentsDto student) async {
-    final dbRef = firestore.collection(collectionPath).doc();
+    final DocumentReference<Map<String, dynamic>> dbRef =
+        firestore.collection(collectionPath).doc();
 
     await dbRef.set(student.toJson());
     StudentsDto data = student.copyWith(id: dbRef.id);
@@ -36,11 +37,9 @@ class StudentsRepository extends StudentsRepositoryProtocol {
 
   DocumentReference<Map<String, dynamic>> getRefId(String id) =>
       firestore.collection(collectionPath).doc(id);
-      
-        @override
-        Future<void> deleteStudent(String id) async{
-              await firestore.collection(collectionPath).doc(id).delete();
 
-          
-        }
+  @override
+  Future<void> deleteStudent(String studentId) async {
+    await firestore.collection(collectionPath).doc(studentId).delete();
+  }
 }

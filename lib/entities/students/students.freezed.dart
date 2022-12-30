@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'students.dart';
 
@@ -21,12 +21,13 @@ StudentsDto _$StudentsDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$StudentsDto {
   String get id => throw _privateConstructorUsedError;
-  String get order => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
+  DateTime get registeredDate => throw _privateConstructorUsedError;
+  String get studentDescription => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,12 +43,13 @@ abstract class $StudentsDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String order,
       String name,
       String lastName,
       String phone,
       String email,
-      String gender});
+      String gender,
+      DateTime registeredDate,
+      String studentDescription});
 }
 
 /// @nodoc
@@ -64,21 +66,18 @@ class _$StudentsDtoCopyWithImpl<$Res, $Val extends StudentsDto>
   @override
   $Res call({
     Object? id = null,
-    Object? order = null,
     Object? name = null,
     Object? lastName = null,
     Object? phone = null,
     Object? email = null,
     Object? gender = null,
+    Object? registeredDate = null,
+    Object? studentDescription = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -99,6 +98,14 @@ class _$StudentsDtoCopyWithImpl<$Res, $Val extends StudentsDto>
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      registeredDate: null == registeredDate
+          ? _value.registeredDate
+          : registeredDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      studentDescription: null == studentDescription
+          ? _value.studentDescription
+          : studentDescription // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -114,12 +121,13 @@ abstract class _$$_StudentsDtoCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String order,
       String name,
       String lastName,
       String phone,
       String email,
-      String gender});
+      String gender,
+      DateTime registeredDate,
+      String studentDescription});
 }
 
 /// @nodoc
@@ -134,21 +142,18 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? order = null,
     Object? name = null,
     Object? lastName = null,
     Object? phone = null,
     Object? email = null,
     Object? gender = null,
+    Object? registeredDate = null,
+    Object? studentDescription = null,
   }) {
     return _then(_$_StudentsDto(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
           ? _value.name
@@ -170,6 +175,14 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as String,
+      registeredDate: null == registeredDate
+          ? _value.registeredDate
+          : registeredDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      studentDescription: null == studentDescription
+          ? _value.studentDescription
+          : studentDescription // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -179,20 +192,19 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
 class _$_StudentsDto implements _StudentsDto {
   _$_StudentsDto(
       {required this.id,
-      required this.order,
       required this.name,
       required this.lastName,
       required this.phone,
       required this.email,
-      required this.gender});
+      required this.gender,
+      required this.registeredDate,
+      required this.studentDescription});
 
   factory _$_StudentsDto.fromJson(Map<String, dynamic> json) =>
       _$$_StudentsDtoFromJson(json);
 
   @override
   final String id;
-  @override
-  final String order;
   @override
   final String name;
   @override
@@ -203,10 +215,14 @@ class _$_StudentsDto implements _StudentsDto {
   final String email;
   @override
   final String gender;
+  @override
+  final DateTime registeredDate;
+  @override
+  final String studentDescription;
 
   @override
   String toString() {
-    return 'StudentsDto(id: $id, order: $order, name: $name, lastName: $lastName, phone: $phone, email: $email, gender: $gender)';
+    return 'StudentsDto(id: $id, name: $name, lastName: $lastName, phone: $phone, email: $email, gender: $gender, registeredDate: $registeredDate, studentDescription: $studentDescription)';
   }
 
   @override
@@ -215,19 +231,22 @@ class _$_StudentsDto implements _StudentsDto {
         (other.runtimeType == runtimeType &&
             other is _$_StudentsDto &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.order, order) || other.order == order) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.lastName, lastName) ||
                 other.lastName == lastName) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.gender, gender) || other.gender == gender));
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.registeredDate, registeredDate) ||
+                other.registeredDate == registeredDate) &&
+            (identical(other.studentDescription, studentDescription) ||
+                other.studentDescription == studentDescription));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, order, name, lastName, phone, email, gender);
+  int get hashCode => Object.hash(runtimeType, id, name, lastName, phone, email,
+      gender, registeredDate, studentDescription);
 
   @JsonKey(ignore: true)
   @override
@@ -246,20 +265,19 @@ class _$_StudentsDto implements _StudentsDto {
 abstract class _StudentsDto implements StudentsDto {
   factory _StudentsDto(
       {required final String id,
-      required final String order,
       required final String name,
       required final String lastName,
       required final String phone,
       required final String email,
-      required final String gender}) = _$_StudentsDto;
+      required final String gender,
+      required final DateTime registeredDate,
+      required final String studentDescription}) = _$_StudentsDto;
 
   factory _StudentsDto.fromJson(Map<String, dynamic> json) =
       _$_StudentsDto.fromJson;
 
   @override
   String get id;
-  @override
-  String get order;
   @override
   String get name;
   @override
@@ -270,6 +288,10 @@ abstract class _StudentsDto implements StudentsDto {
   String get email;
   @override
   String get gender;
+  @override
+  DateTime get registeredDate;
+  @override
+  String get studentDescription;
   @override
   @JsonKey(ignore: true)
   _$$_StudentsDtoCopyWith<_$_StudentsDto> get copyWith =>

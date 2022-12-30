@@ -8,15 +8,18 @@ import 'package:x_mansion/helper/text_field_container.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
 
-class FormBuilder extends ConsumerStatefulWidget {
+class RegisterFormBuilder extends ConsumerStatefulWidget {
   final Widget title;
   final Function(bool condition) onSucess;
-  const FormBuilder({required this.title, required this.onSucess});
+  const RegisterFormBuilder({
+    required this.title,
+    required this.onSucess,
+  });
   @override
-  _FormBuilder createState() => _FormBuilder();
+  _RegisterFormBuilder createState() => _RegisterFormBuilder();
 }
 
-class _FormBuilder extends ConsumerState<FormBuilder> {
+class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
   late TextEditingController _nameController;
   late TextEditingController _lastNameController;
   late TextEditingController _phoneController;

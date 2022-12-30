@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:x_mansion/entities/students/students.dart';
 import 'package:x_mansion/helper/constans.dart';
-import 'package:x_mansion/helper/form.dart';
+import 'package:x_mansion/helper/edit_form.dart';
+import 'package:x_mansion/helper/register_form.dart';
 import 'package:x_mansion/navigation/app_router.gr.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
@@ -71,7 +72,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                       onPressed: () {
                         showDialog(
                             context: context,
-                            builder: ((context) => FormBuilder(
+                            builder: ((context) => RegisterFormBuilder(
                                   onSucess: (condition) {
                                     setState(() {});
                                   },
@@ -122,7 +123,21 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                           DataCell(Text('${student.gender}')),
                                           DataCell(Row(
                                             children: [
-                                              Icon(Icons.edit),
+                                              InkWell(
+                                                  onTap: () => showDialog(
+                                                      context: context,
+                                                      builder: ((context) =>
+                                                          EditFormBuilder(
+                                                            studentId:
+                                                                student.id,
+                                                            onSucess:
+                                                                (condition) {
+                                                              setState(() {});
+                                                            },
+                                                            title: Text(
+                                                                'Registro'),
+                                                          ))),
+                                                  child: Icon(Icons.edit)),
                                               InkWell(
                                                   onTap: () {
                                                     setState(() {

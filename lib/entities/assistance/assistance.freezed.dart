@@ -14,46 +14,37 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-AssistanceDto _$AssistanceDtoFromJson(Map<String, dynamic> json) {
-  return _AssistanceDto.fromJson(json);
+AttendanceDto _$AttendanceDtoFromJson(Map<String, dynamic> json) {
+  return _AttendanceDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AssistanceDto {
+mixin _$AttendanceDto {
   String get assignatureId => throw _privateConstructorUsedError;
-  StudentsDto get student => throw _privateConstructorUsedError;
+  String get stundentId => throw _privateConstructorUsedError;
   bool get isHere => throw _privateConstructorUsedError;
-  DateTime get fecha => throw _privateConstructorUsedError;
-  String get schedule => throw _privateConstructorUsedError;
-  String get professor => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AssistanceDtoCopyWith<AssistanceDto> get copyWith =>
+  $AttendanceDtoCopyWith<AttendanceDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AssistanceDtoCopyWith<$Res> {
-  factory $AssistanceDtoCopyWith(
-          AssistanceDto value, $Res Function(AssistanceDto) then) =
-      _$AssistanceDtoCopyWithImpl<$Res, AssistanceDto>;
+abstract class $AttendanceDtoCopyWith<$Res> {
+  factory $AttendanceDtoCopyWith(
+          AttendanceDto value, $Res Function(AttendanceDto) then) =
+      _$AttendanceDtoCopyWithImpl<$Res, AttendanceDto>;
   @useResult
   $Res call(
-      {String assignatureId,
-      StudentsDto student,
-      bool isHere,
-      DateTime fecha,
-      String schedule,
-      String professor});
-
-  $StudentsDtoCopyWith<$Res> get student;
+      {String assignatureId, String stundentId, bool isHere, DateTime date});
 }
 
 /// @nodoc
-class _$AssistanceDtoCopyWithImpl<$Res, $Val extends AssistanceDto>
-    implements $AssistanceDtoCopyWith<$Res> {
-  _$AssistanceDtoCopyWithImpl(this._value, this._then);
+class _$AttendanceDtoCopyWithImpl<$Res, $Val extends AttendanceDto>
+    implements $AttendanceDtoCopyWith<$Res> {
+  _$AttendanceDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -64,209 +55,158 @@ class _$AssistanceDtoCopyWithImpl<$Res, $Val extends AssistanceDto>
   @override
   $Res call({
     Object? assignatureId = null,
-    Object? student = null,
+    Object? stundentId = null,
     Object? isHere = null,
-    Object? fecha = null,
-    Object? schedule = null,
-    Object? professor = null,
+    Object? date = null,
   }) {
     return _then(_value.copyWith(
       assignatureId: null == assignatureId
           ? _value.assignatureId
           : assignatureId // ignore: cast_nullable_to_non_nullable
               as String,
-      student: null == student
-          ? _value.student
-          : student // ignore: cast_nullable_to_non_nullable
-              as StudentsDto,
+      stundentId: null == stundentId
+          ? _value.stundentId
+          : stundentId // ignore: cast_nullable_to_non_nullable
+              as String,
       isHere: null == isHere
           ? _value.isHere
           : isHere // ignore: cast_nullable_to_non_nullable
               as bool,
-      fecha: null == fecha
-          ? _value.fecha
-          : fecha // ignore: cast_nullable_to_non_nullable
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      schedule: null == schedule
-          ? _value.schedule
-          : schedule // ignore: cast_nullable_to_non_nullable
-              as String,
-      professor: null == professor
-          ? _value.professor
-          : professor // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $StudentsDtoCopyWith<$Res> get student {
-    return $StudentsDtoCopyWith<$Res>(_value.student, (value) {
-      return _then(_value.copyWith(student: value) as $Val);
-    });
   }
 }
 
 /// @nodoc
-abstract class _$$_AssistanceDtoCopyWith<$Res>
-    implements $AssistanceDtoCopyWith<$Res> {
-  factory _$$_AssistanceDtoCopyWith(
-          _$_AssistanceDto value, $Res Function(_$_AssistanceDto) then) =
-      __$$_AssistanceDtoCopyWithImpl<$Res>;
+abstract class _$$_AttendanceDtoCopyWith<$Res>
+    implements $AttendanceDtoCopyWith<$Res> {
+  factory _$$_AttendanceDtoCopyWith(
+          _$_AttendanceDto value, $Res Function(_$_AttendanceDto) then) =
+      __$$_AttendanceDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String assignatureId,
-      StudentsDto student,
-      bool isHere,
-      DateTime fecha,
-      String schedule,
-      String professor});
-
-  @override
-  $StudentsDtoCopyWith<$Res> get student;
+      {String assignatureId, String stundentId, bool isHere, DateTime date});
 }
 
 /// @nodoc
-class __$$_AssistanceDtoCopyWithImpl<$Res>
-    extends _$AssistanceDtoCopyWithImpl<$Res, _$_AssistanceDto>
-    implements _$$_AssistanceDtoCopyWith<$Res> {
-  __$$_AssistanceDtoCopyWithImpl(
-      _$_AssistanceDto _value, $Res Function(_$_AssistanceDto) _then)
+class __$$_AttendanceDtoCopyWithImpl<$Res>
+    extends _$AttendanceDtoCopyWithImpl<$Res, _$_AttendanceDto>
+    implements _$$_AttendanceDtoCopyWith<$Res> {
+  __$$_AttendanceDtoCopyWithImpl(
+      _$_AttendanceDto _value, $Res Function(_$_AttendanceDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? assignatureId = null,
-    Object? student = null,
+    Object? stundentId = null,
     Object? isHere = null,
-    Object? fecha = null,
-    Object? schedule = null,
-    Object? professor = null,
+    Object? date = null,
   }) {
-    return _then(_$_AssistanceDto(
+    return _then(_$_AttendanceDto(
       assignatureId: null == assignatureId
           ? _value.assignatureId
           : assignatureId // ignore: cast_nullable_to_non_nullable
               as String,
-      student: null == student
-          ? _value.student
-          : student // ignore: cast_nullable_to_non_nullable
-              as StudentsDto,
+      stundentId: null == stundentId
+          ? _value.stundentId
+          : stundentId // ignore: cast_nullable_to_non_nullable
+              as String,
       isHere: null == isHere
           ? _value.isHere
           : isHere // ignore: cast_nullable_to_non_nullable
               as bool,
-      fecha: null == fecha
-          ? _value.fecha
-          : fecha // ignore: cast_nullable_to_non_nullable
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      schedule: null == schedule
-          ? _value.schedule
-          : schedule // ignore: cast_nullable_to_non_nullable
-              as String,
-      professor: null == professor
-          ? _value.professor
-          : professor // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_AssistanceDto implements _AssistanceDto {
-  _$_AssistanceDto(
+class _$_AttendanceDto implements _AttendanceDto {
+  _$_AttendanceDto(
       {required this.assignatureId,
-      required this.student,
+      required this.stundentId,
       required this.isHere,
-      required this.fecha,
-      required this.schedule,
-      required this.professor});
+      required this.date});
 
-  factory _$_AssistanceDto.fromJson(Map<String, dynamic> json) =>
-      _$$_AssistanceDtoFromJson(json);
+  factory _$_AttendanceDto.fromJson(Map<String, dynamic> json) =>
+      _$$_AttendanceDtoFromJson(json);
 
   @override
   final String assignatureId;
   @override
-  final StudentsDto student;
+  final String stundentId;
   @override
   final bool isHere;
   @override
-  final DateTime fecha;
-  @override
-  final String schedule;
-  @override
-  final String professor;
+  final DateTime date;
 
   @override
   String toString() {
-    return 'AssistanceDto(assignatureId: $assignatureId, student: $student, isHere: $isHere, fecha: $fecha, schedule: $schedule, professor: $professor)';
+    return 'AttendanceDto(assignatureId: $assignatureId, stundentId: $stundentId, isHere: $isHere, date: $date)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AssistanceDto &&
+            other is _$_AttendanceDto &&
             (identical(other.assignatureId, assignatureId) ||
                 other.assignatureId == assignatureId) &&
-            (identical(other.student, student) || other.student == student) &&
+            (identical(other.stundentId, stundentId) ||
+                other.stundentId == stundentId) &&
             (identical(other.isHere, isHere) || other.isHere == isHere) &&
-            (identical(other.fecha, fecha) || other.fecha == fecha) &&
-            (identical(other.schedule, schedule) ||
-                other.schedule == schedule) &&
-            (identical(other.professor, professor) ||
-                other.professor == professor));
+            (identical(other.date, date) || other.date == date));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, assignatureId, student, isHere, fecha, schedule, professor);
+  int get hashCode =>
+      Object.hash(runtimeType, assignatureId, stundentId, isHere, date);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AssistanceDtoCopyWith<_$_AssistanceDto> get copyWith =>
-      __$$_AssistanceDtoCopyWithImpl<_$_AssistanceDto>(this, _$identity);
+  _$$_AttendanceDtoCopyWith<_$_AttendanceDto> get copyWith =>
+      __$$_AttendanceDtoCopyWithImpl<_$_AttendanceDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AssistanceDtoToJson(
+    return _$$_AttendanceDtoToJson(
       this,
     );
   }
 }
 
-abstract class _AssistanceDto implements AssistanceDto {
-  factory _AssistanceDto(
+abstract class _AttendanceDto implements AttendanceDto {
+  factory _AttendanceDto(
       {required final String assignatureId,
-      required final StudentsDto student,
+      required final String stundentId,
       required final bool isHere,
-      required final DateTime fecha,
-      required final String schedule,
-      required final String professor}) = _$_AssistanceDto;
+      required final DateTime date}) = _$_AttendanceDto;
 
-  factory _AssistanceDto.fromJson(Map<String, dynamic> json) =
-      _$_AssistanceDto.fromJson;
+  factory _AttendanceDto.fromJson(Map<String, dynamic> json) =
+      _$_AttendanceDto.fromJson;
 
   @override
   String get assignatureId;
   @override
-  StudentsDto get student;
+  String get stundentId;
   @override
   bool get isHere;
   @override
-  DateTime get fecha;
-  @override
-  String get schedule;
-  @override
-  String get professor;
+  DateTime get date;
   @override
   @JsonKey(ignore: true)
-  _$$_AssistanceDtoCopyWith<_$_AssistanceDto> get copyWith =>
+  _$$_AttendanceDtoCopyWith<_$_AttendanceDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

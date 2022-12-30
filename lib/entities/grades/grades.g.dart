@@ -7,23 +7,18 @@ part of 'grades.dart';
 // **************************************************************************
 
 _$_GradesDto _$$_GradesDtoFromJson(Map<String, dynamic> json) => _$_GradesDto(
-      asignationId: json['asignationId'] as String,
-      student: StudentsDto.fromJson(json['student'] as Map<String, dynamic>),
-      score: $enumDecode(_$ScoreTypeEnumMap, json['score']),
+      firstTerm: json['firstTerm'] as String,
+      midTerm: json['midTerm'] as String,
+      finalTerm: json['finalTerm'] as String,
+      alphabeticGrade: json['alphabeticGrade'] as String,
       average: json['average'] as String,
     );
 
 Map<String, dynamic> _$$_GradesDtoToJson(_$_GradesDto instance) =>
     <String, dynamic>{
-      'asignationId': instance.asignationId,
-      'student': instance.student,
-      'score': _$ScoreTypeEnumMap[instance.score]!,
+      'firstTerm': instance.firstTerm,
+      'midTerm': instance.midTerm,
+      'finalTerm': instance.finalTerm,
+      'alphabeticGrade': instance.alphabeticGrade,
       'average': instance.average,
     };
-
-const _$ScoreTypeEnumMap = {
-  ScoreType.partial: 'partial',
-  ScoreType.midTerm: 'midTerm',
-  ScoreType.finals: 'finals',
-  ScoreType.alphabetic: 'alphabetic',
-};

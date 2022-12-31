@@ -21,6 +21,7 @@ const List<String> registerList = [
   'Género',
   'Descripcion'
 ];
+List<String> dropDownOptions = ['M', 'F'];
 
 ///[Cloud]
 

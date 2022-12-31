@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:x_mansion/entities/students/students.dart';
+import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/text_field_container.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
@@ -27,7 +28,7 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
   late TextEditingController _emailController;
   late TextEditingController _descriptionController;
   StudentsDto? students;
-  String _gender = '';
+  String? _gender;
 
   @override
   void initState() {
@@ -49,6 +50,14 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
       return result;
     } catch (error) {
       throw Exception('Error while getting data $error');
+    }
+  }
+
+  void dropdownCallback(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(() {
+        _gender = selectedValue;
+      });
     }
   }
 
@@ -105,20 +114,31 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
                         ],
                       ),
                       SizedBox(height: 12),
-                      Padding(
-                        padding: const EdgeInsetsDirectional.only(end: 258),
-                        child: DropdownMenu(
-                            onSelected: (value) {
-                              if (value != null && value.isNotEmpty)
-                                _gender = value;
-                            },
-                            width: 135,
-                            textStyle: GoogleFonts.montserrat(),
-                            hintText: student.gender,
-                            dropdownMenuEntries: [
-                              DropdownMenuEntry<String>(value: 'M', label: 'M'),
-                              DropdownMenuEntry<String>(value: 'F', label: 'F'),
-                            ]),
+                      Container(
+                        width: width * 0.075,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Color(0XFF7A7D81).withOpacity(.3))),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton(
+                                hint: Text(
+                                  student.gender,
+                                  style: GoogleFonts.montserrat(),
+                                ),
+                                items: dropDownOptions
+                                    .map<DropdownMenuItem<String>>(
+                                        (String gender) {
+                                  return DropdownMenuItem<String>(
+                                      child: Text(gender), value: gender);
+                                }).toList(),
+                                value: _gender,
+                                onChanged: dropdownCallback,
+                                style: GoogleFonts.montserrat(
+                                    color: Colors.black)),
+                          ),
+                        ),
                       ),
                       SizedBox(height: 12),
                       TextFieldContainer(
@@ -178,7 +198,8 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
     final String studentDescription = _descriptionController.text.isNotEmpty
         ? _descriptionController.text
         : student.studentDescription;
-    final String gender = _gender.isNotEmpty ? _gender : student.gender;
+    final String? gender =
+        (_gender!.isNotEmpty) && _gender != null ? _gender : student.gender;
 
     students = StudentsDto(
       id: id,
@@ -188,7 +209,7 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
       phone: phone,
       email: email,
       studentDescription: studentDescription,
-      gender: gender,
+      gender: gender!,
     );
     StudentsRepository data = StudentsRepository();
     if (students != null) {

@@ -21,6 +21,16 @@ const List<String> registerList = [
   'Género',
   'Descripcion'
 ];
+
+const List<String> grades = [
+  'Estudiante',
+  'ESP101',
+  'MAT126',
+  'NAT403',
+  'SOC281',
+  'Promedio',
+];
+
 List<String> dropDownOptions = ['M', 'F'];
 
 ///[Cloud]

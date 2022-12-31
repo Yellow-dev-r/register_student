@@ -29,7 +29,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
 
         break;
       case "Calificaciones":
-        //TODO: calificaciones
+        mainNavigator.router.push(GradesScreenRoute());
         break;
       case "Asistencia":
         //TODO: asistencia
@@ -145,7 +145,22 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                                           student.id);
                                                     });
                                                   },
-                                                  child: Icon(Icons.delete))
+                                                  child: Icon(Icons.delete)),
+                                              PopupMenuButton(
+                                                itemBuilder: (context) {
+                                                  return <PopupMenuEntry>[
+                                                    PopupMenuItem(
+                                                      child:
+                                                          Text('Calificacion'),
+                                                      onTap: () {},
+                                                    ),
+                                                    PopupMenuItem(
+                                                      child: Text('Asistencia'),
+                                                      onTap: () {},
+                                                    ),
+                                                  ];
+                                                },
+                                              ),
                                             ],
                                           )),
                                         ]))

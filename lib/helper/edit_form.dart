@@ -202,15 +202,15 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
         (_gender!.isNotEmpty) && _gender != null ? _gender : student.gender;
 
     students = StudentsDto(
-      id: id,
-      registeredDate: registeredDate,
-      name: name,
-      lastName: lastName,
-      phone: phone,
-      email: email,
-      studentDescription: studentDescription,
-      gender: gender!,
-    );
+        id: id,
+        registeredDate: registeredDate,
+        name: name,
+        lastName: lastName,
+        phone: phone,
+        email: email,
+        studentDescription: studentDescription,
+        gender: gender!,
+        asignaturesGrades: student.asignaturesGrades);
     StudentsRepository data = StudentsRepository();
     if (students != null) {
       data.updateStudent(students!);

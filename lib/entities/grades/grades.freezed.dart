@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'grades.dart';
 
@@ -20,11 +20,11 @@ GradesDto _$GradesDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GradesDto {
+  String get asignature => throw _privateConstructorUsedError;
   String get firstTerm => throw _privateConstructorUsedError;
   String get midTerm => throw _privateConstructorUsedError;
   String get finalTerm => throw _privateConstructorUsedError;
   String get alphabeticGrade => throw _privateConstructorUsedError;
-  String get average => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,11 +38,11 @@ abstract class $GradesDtoCopyWith<$Res> {
       _$GradesDtoCopyWithImpl<$Res, GradesDto>;
   @useResult
   $Res call(
-      {String firstTerm,
+      {String asignature,
+      String firstTerm,
       String midTerm,
       String finalTerm,
-      String alphabeticGrade,
-      String average});
+      String alphabeticGrade});
 }
 
 /// @nodoc
@@ -58,13 +58,17 @@ class _$GradesDtoCopyWithImpl<$Res, $Val extends GradesDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? asignature = null,
     Object? firstTerm = null,
     Object? midTerm = null,
     Object? finalTerm = null,
     Object? alphabeticGrade = null,
-    Object? average = null,
   }) {
     return _then(_value.copyWith(
+      asignature: null == asignature
+          ? _value.asignature
+          : asignature // ignore: cast_nullable_to_non_nullable
+              as String,
       firstTerm: null == firstTerm
           ? _value.firstTerm
           : firstTerm // ignore: cast_nullable_to_non_nullable
@@ -80,10 +84,6 @@ class _$GradesDtoCopyWithImpl<$Res, $Val extends GradesDto>
       alphabeticGrade: null == alphabeticGrade
           ? _value.alphabeticGrade
           : alphabeticGrade // ignore: cast_nullable_to_non_nullable
-              as String,
-      average: null == average
-          ? _value.average
-          : average // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -97,11 +97,11 @@ abstract class _$$_GradesDtoCopyWith<$Res> implements $GradesDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String firstTerm,
+      {String asignature,
+      String firstTerm,
       String midTerm,
       String finalTerm,
-      String alphabeticGrade,
-      String average});
+      String alphabeticGrade});
 }
 
 /// @nodoc
@@ -115,13 +115,17 @@ class __$$_GradesDtoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? asignature = null,
     Object? firstTerm = null,
     Object? midTerm = null,
     Object? finalTerm = null,
     Object? alphabeticGrade = null,
-    Object? average = null,
   }) {
     return _then(_$_GradesDto(
+      asignature: null == asignature
+          ? _value.asignature
+          : asignature // ignore: cast_nullable_to_non_nullable
+              as String,
       firstTerm: null == firstTerm
           ? _value.firstTerm
           : firstTerm // ignore: cast_nullable_to_non_nullable
@@ -138,10 +142,6 @@ class __$$_GradesDtoCopyWithImpl<$Res>
           ? _value.alphabeticGrade
           : alphabeticGrade // ignore: cast_nullable_to_non_nullable
               as String,
-      average: null == average
-          ? _value.average
-          : average // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -150,15 +150,17 @@ class __$$_GradesDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GradesDto implements _GradesDto {
   _$_GradesDto(
-      {required this.firstTerm,
+      {required this.asignature,
+      required this.firstTerm,
       required this.midTerm,
       required this.finalTerm,
-      required this.alphabeticGrade,
-      required this.average});
+      required this.alphabeticGrade});
 
   factory _$_GradesDto.fromJson(Map<String, dynamic> json) =>
       _$$_GradesDtoFromJson(json);
 
+  @override
+  final String asignature;
   @override
   final String firstTerm;
   @override
@@ -167,12 +169,10 @@ class _$_GradesDto implements _GradesDto {
   final String finalTerm;
   @override
   final String alphabeticGrade;
-  @override
-  final String average;
 
   @override
   String toString() {
-    return 'GradesDto(firstTerm: $firstTerm, midTerm: $midTerm, finalTerm: $finalTerm, alphabeticGrade: $alphabeticGrade, average: $average)';
+    return 'GradesDto(asignature: $asignature, firstTerm: $firstTerm, midTerm: $midTerm, finalTerm: $finalTerm, alphabeticGrade: $alphabeticGrade)';
   }
 
   @override
@@ -180,20 +180,21 @@ class _$_GradesDto implements _GradesDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GradesDto &&
+            (identical(other.asignature, asignature) ||
+                other.asignature == asignature) &&
             (identical(other.firstTerm, firstTerm) ||
                 other.firstTerm == firstTerm) &&
             (identical(other.midTerm, midTerm) || other.midTerm == midTerm) &&
             (identical(other.finalTerm, finalTerm) ||
                 other.finalTerm == finalTerm) &&
             (identical(other.alphabeticGrade, alphabeticGrade) ||
-                other.alphabeticGrade == alphabeticGrade) &&
-            (identical(other.average, average) || other.average == average));
+                other.alphabeticGrade == alphabeticGrade));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, firstTerm, midTerm, finalTerm, alphabeticGrade, average);
+      runtimeType, asignature, firstTerm, midTerm, finalTerm, alphabeticGrade);
 
   @JsonKey(ignore: true)
   @override
@@ -211,15 +212,17 @@ class _$_GradesDto implements _GradesDto {
 
 abstract class _GradesDto implements GradesDto {
   factory _GradesDto(
-      {required final String firstTerm,
+      {required final String asignature,
+      required final String firstTerm,
       required final String midTerm,
       required final String finalTerm,
-      required final String alphabeticGrade,
-      required final String average}) = _$_GradesDto;
+      required final String alphabeticGrade}) = _$_GradesDto;
 
   factory _GradesDto.fromJson(Map<String, dynamic> json) =
       _$_GradesDto.fromJson;
 
+  @override
+  String get asignature;
   @override
   String get firstTerm;
   @override
@@ -228,8 +231,6 @@ abstract class _GradesDto implements GradesDto {
   String get finalTerm;
   @override
   String get alphabeticGrade;
-  @override
-  String get average;
   @override
   @JsonKey(ignore: true)
   _$$_GradesDtoCopyWith<_$_GradesDto> get copyWith =>

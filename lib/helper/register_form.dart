@@ -3,9 +3,11 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_mansion/entities/grades/grades.dart';
 import 'package:x_mansion/entities/students/students.dart';
 import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/text_field_container.dart';
+import 'package:x_mansion/mock/grades_dto.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
 
@@ -145,22 +147,21 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
   }
 
   void registerStudent(BuildContext context) {
-    
     if (_gender != null)
       students = StudentsDto(
-        id: '',
-        registeredDate: DateTime.now(),
-        name: _nameController.text,
-        lastName: _lastNameController.text,
-        phone: _phoneController.text,
-        email: _emailController.text,
-        studentDescription: _descriptionController.text,
-        gender: _gender!,
-      );
+          id: '',
+          registeredDate: DateTime.now(),
+          name: _nameController.text,
+          lastName: _lastNameController.text,
+          phone: _phoneController.text,
+          email: _emailController.text,
+          studentDescription: _descriptionController.text,
+          gender: _gender!,
+          asignaturesGrades: gradesDtoMock.map((e) => e.toJson()).toList());
     StudentsRepository data = StudentsRepository();
     if (students != null) {
       data.getStudentToDB(students!);
-    
+
       widget.onSucess(true);
     } else
       showAboutDialog(
@@ -173,7 +174,7 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
               style: GoogleFonts.montserrat(),
             )
           ]);
-    
+
     mainNavigator.router.pop(context);
   }
 }

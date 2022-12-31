@@ -19,16 +19,15 @@ dependencies:
   firebase_core: ^2.4.0
   cloud_firestore: ^4.3.0
 
-  # auto-route
+  # navigation
   auto_route: ^5.0.4
+  url_strategy: ^0.2.0
 
   #media
   flutter_svg: ^1.1.6
 
   #theme
   google_fonts: ^3.0.1
-
-
 
   dartz: ^0.10.1
   freezed_annotation: ^2.0.3
@@ -50,6 +49,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets: 
-  - assets/
-
+  assets:
+    - assets/

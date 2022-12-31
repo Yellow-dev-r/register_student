@@ -11,42 +11,64 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutter/material.dart' as _i3;
+import 'package:auto_route/auto_route.dart' as _i4;
+import 'package:flutter/material.dart' as _i5;
+import 'package:x_mansion/ui/attendance/attendance.dart' as _i3;
+import 'package:x_mansion/ui/grades/grades.dart' as _i2;
 import 'package:x_mansion/ui/home/home.dart' as _i1;
 
-class AppRouter extends _i2.RootStackRouter {
-  AppRouter([_i3.GlobalKey<_i3.NavigatorState>? navigatorKey])
+class AppRouter extends _i4.RootStackRouter {
+  AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i2.PageFactory> pagesMap = {
+  final Map<String, _i4.PageFactory> pagesMap = {
     HomeScreenRoute.name: (routeData) {
-      return _i2.AdaptivePage<dynamic>(
+      return _i4.AdaptivePage<dynamic>(
         routeData: routeData,
         child: _i1.HomeScreenView(),
       );
-    }
+    },
+    GradesScreenRoute.name: (routeData) {
+      return _i4.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i2.GradesScreenView(),
+      );
+    },
+    AttendanceScreenRoute.name: (routeData) {
+      return _i4.AdaptivePage<dynamic>(
+        routeData: routeData,
+        child: _i3.AttendanceScreenView(),
+      );
+    },
   };
 
   @override
-  List<_i2.RouteConfig> get routes => [
-        _i2.RouteConfig(
+  List<_i4.RouteConfig> get routes => [
+        _i4.RouteConfig(
           '/#redirect',
           path: '/',
           redirectTo: '/landing',
           fullMatch: true,
         ),
-        _i2.RouteConfig(
+        _i4.RouteConfig(
           HomeScreenRoute.name,
           path: '/landing',
+        ),
+        _i4.RouteConfig(
+          GradesScreenRoute.name,
+          path: '/grades',
+        ),
+        _i4.RouteConfig(
+          AttendanceScreenRoute.name,
+          path: '/attendance',
         ),
       ];
 }
 
 /// generated route for
 /// [_i1.HomeScreenView]
-class HomeScreenRoute extends _i2.PageRouteInfo<void> {
+class HomeScreenRoute extends _i4.PageRouteInfo<void> {
   const HomeScreenRoute()
       : super(
           HomeScreenRoute.name,
@@ -54,4 +76,28 @@ class HomeScreenRoute extends _i2.PageRouteInfo<void> {
         );
 
   static const String name = 'HomeScreenRoute';
+}
+
+/// generated route for
+/// [_i2.GradesScreenView]
+class GradesScreenRoute extends _i4.PageRouteInfo<void> {
+  const GradesScreenRoute()
+      : super(
+          GradesScreenRoute.name,
+          path: '/grades',
+        );
+
+  static const String name = 'GradesScreenRoute';
+}
+
+/// generated route for
+/// [_i3.AttendanceScreenView]
+class AttendanceScreenRoute extends _i4.PageRouteInfo<void> {
+  const AttendanceScreenRoute()
+      : super(
+          AttendanceScreenRoute.name,
+          path: '/attendance',
+        );
+
+  static const String name = 'AttendanceScreenRoute';
 }

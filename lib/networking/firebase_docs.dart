@@ -22,18 +22,8 @@ class StudentsRepository extends StudentsRepositoryProtocol {
       await dbRef.set(student.toJson());
       StudentsDto data = student.copyWith(id: dbRef.id);
       await getRefId(dbRef.id).set(data.toJson());
-      await firestore
-          .collection(collectionPath)
-          .doc(data.id)
-          .collection('ESP101')
-          .add({});
-      assignatures.map((assignatureDoc) async {
-        await firestore
-            .collection(collectionPath)
-            .doc(data.id)
-            .collection(assignature)
-            .add({});
-      });
+
+     
     } catch (error) {
       throw Exception('error getting student to database $error');
     }

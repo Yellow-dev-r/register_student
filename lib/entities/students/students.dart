@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:x_mansion/entities/grades/grades.dart';
 
 part 'students.freezed.dart';
 part 'students.g.dart';
@@ -14,6 +15,7 @@ class StudentsDto with _$StudentsDto {
     required String gender,
     required DateTime registeredDate,
     required String studentDescription,
+    required List<Map<String, dynamic>> asignaturesGrades,
     //TODO: assitance logic
     // required AssitanceDto assitance,
   }) = _StudentsDto;

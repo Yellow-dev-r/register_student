@@ -22,6 +22,21 @@ const List<String> registerList = [
   'Descripcion'
 ];
 
+const List<String> grades = [
+  'Estudiante',
+  'ESP101',
+  'MAT126',
+  'NAT403',
+  'SOC281',
+  'Promedio',
+];
+
+List<String> dropDownOptions = ['M', 'F'];
+
 ///[Cloud]
 
 const String collectionPath = 'student';
+
+const List<String> assignatures = ['ESP101', 'MAT126', 'NAT403', 'SOC281'];
+
+const String assignature = 'assignature';

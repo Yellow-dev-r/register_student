@@ -6,22 +6,18 @@ part of 'assistance.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AssistanceDto _$$_AssistanceDtoFromJson(Map<String, dynamic> json) =>
-    _$_AssistanceDto(
+_$_AttendanceDto _$$_AttendanceDtoFromJson(Map<String, dynamic> json) =>
+    _$_AttendanceDto(
       assignatureId: json['assignatureId'] as String,
-      student: StudentsDto.fromJson(json['student'] as Map<String, dynamic>),
+      stundentId: json['stundentId'] as String,
       isHere: json['isHere'] as bool,
-      fecha: DateTime.parse(json['fecha'] as String),
-      schedule: json['schedule'] as String,
-      professor: json['professor'] as String,
+      date: DateTime.parse(json['date'] as String),
     );
 
-Map<String, dynamic> _$$_AssistanceDtoToJson(_$_AssistanceDto instance) =>
+Map<String, dynamic> _$$_AttendanceDtoToJson(_$_AttendanceDto instance) =>
     <String, dynamic>{
       'assignatureId': instance.assignatureId,
-      'student': instance.student,
+      'stundentId': instance.stundentId,
       'isHere': instance.isHere,
-      'fecha': instance.fecha.toIso8601String(),
-      'schedule': instance.schedule,
-      'professor': instance.professor,
+      'date': instance.date.toIso8601String(),
     };

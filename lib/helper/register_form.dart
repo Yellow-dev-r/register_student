@@ -3,27 +3,33 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:x_mansion/entities/grades/grades.dart';
 import 'package:x_mansion/entities/students/students.dart';
+import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/text_field_container.dart';
+import 'package:x_mansion/mock/grades_dto.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
 
-class FormBuilder extends ConsumerStatefulWidget {
+class RegisterFormBuilder extends ConsumerStatefulWidget {
   final Widget title;
   final Function(bool condition) onSucess;
-  const FormBuilder({required this.title, required this.onSucess});
+  const RegisterFormBuilder({
+    required this.title,
+    required this.onSucess,
+  });
   @override
-  _FormBuilder createState() => _FormBuilder();
+  _RegisterFormBuilder createState() => _RegisterFormBuilder();
 }
 
-class _FormBuilder extends ConsumerState<FormBuilder> {
+class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
   late TextEditingController _nameController;
   late TextEditingController _lastNameController;
   late TextEditingController _phoneController;
   late TextEditingController _emailController;
   late TextEditingController _descriptionController;
   StudentsDto? students;
-  String gender = '';
+  String? _gender;
 
   @override
   void initState() {
@@ -34,6 +40,14 @@ class _FormBuilder extends ConsumerState<FormBuilder> {
     _descriptionController = TextEditingController();
 
     super.initState();
+  }
+
+  void dropdownCallback(String? selectedValue) {
+    if (selectedValue is String) {
+      setState(() {
+        _gender = selectedValue;
+      });
+    }
   }
 
   @override
@@ -78,19 +92,29 @@ class _FormBuilder extends ConsumerState<FormBuilder> {
                 ],
               ),
               SizedBox(height: 12),
-              Padding(
-                padding: const EdgeInsetsDirectional.only(end: 258),
-                child: DropdownMenu(
-                    onSelected: (value) {
-                      if (value != null && value.isNotEmpty) gender = value;
-                    },
-                    width: 135,
-                    textStyle: GoogleFonts.montserrat(),
-                    hintText: 'Genero',
-                    dropdownMenuEntries: [
-                      DropdownMenuEntry<String>(value: 'M', label: 'M'),
-                      DropdownMenuEntry<String>(value: 'F', label: 'F'),
-                    ]),
+              Container(
+                width: width * 0.075,
+                decoration: BoxDecoration(
+                    border:
+                        Border.all(color: Color(0XFF7A7D81).withOpacity(.3))),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton(
+                        hint: Text(
+                          'Genero',
+                          style: GoogleFonts.montserrat(),
+                        ),
+                        items: dropDownOptions
+                            .map<DropdownMenuItem<String>>((String gender) {
+                          return DropdownMenuItem<String>(
+                              child: Text(gender), value: gender);
+                        }).toList(),
+                        value: _gender,
+                        onChanged: dropdownCallback,
+                        style: GoogleFonts.montserrat(color: Colors.black)),
+                  ),
+                ),
               ),
               SizedBox(height: 12),
               TextFieldContainer(
@@ -109,24 +133,7 @@ class _FormBuilder extends ConsumerState<FormBuilder> {
                         child: Text('Cancelar')),
                     TextButton(
                         onPressed: () async {
-                          students = StudentsDto(
-                            id: '',
-                            registeredDate: DateTime.now(),
-                            name: _nameController.text,
-                            lastName: _lastNameController.text,
-                            phone: _phoneController.text,
-                            email: _emailController.text,
-                            studentDescription: _descriptionController.text,
-                            gender: gender,
-                          );
-                          StudentsRepository data = StudentsRepository();
-                          if (students != null) {
-                            data.getStudentToDB(students!);
-
-                            widget.onSucess(true);
-                          }
-                          ;
-                          mainNavigator.router.pop(context);
+                          registerStudent(context);
                         },
                         child: Text('Registrar'))
                   ],
@@ -137,5 +144,37 @@ class _FormBuilder extends ConsumerState<FormBuilder> {
         ),
       ),
     );
+  }
+
+  void registerStudent(BuildContext context) {
+    if (_gender != null)
+      students = StudentsDto(
+          id: '',
+          registeredDate: DateTime.now(),
+          name: _nameController.text,
+          lastName: _lastNameController.text,
+          phone: _phoneController.text,
+          email: _emailController.text,
+          studentDescription: _descriptionController.text,
+          gender: _gender!,
+          asignaturesGrades: gradesDtoMock.map((e) => e.toJson()).toList());
+    StudentsRepository data = StudentsRepository();
+    if (students != null) {
+      data.getStudentToDB(students!);
+
+      widget.onSucess(true);
+    } else
+      showAboutDialog(
+          useRootNavigator: false,
+          context: context,
+          applicationName: 'X-Mansion',
+          children: [
+            Text(
+              'Error por favor verificar campos',
+              style: GoogleFonts.montserrat(),
+            )
+          ]);
+
+    mainNavigator.router.pop(context);
   }
 }

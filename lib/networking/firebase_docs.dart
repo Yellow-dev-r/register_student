@@ -7,19 +7,29 @@ FirebaseFirestore firestore = FirebaseFirestore.instance;
 abstract class StudentsRepositoryProtocol {
   Future<void> getStudentToDB(StudentsDto student);
   Future<List<StudentsDto>> getStudentsList();
+  Future<StudentsDto> getStudent(String studentId);
   Future<void> deleteStudent(String studentId);
+  Future<void> updateStudent(StudentsDto student);
 }
 
 class StudentsRepository extends StudentsRepositoryProtocol {
+  @override
   Future<void> getStudentToDB(StudentsDto student) async {
-    final DocumentReference<Map<String, dynamic>> dbRef =
-        firestore.collection(collectionPath).doc();
+    try {
+      final DocumentReference<Map<String, dynamic>> dbRef =
+          firestore.collection(collectionPath).doc();
 
-    await dbRef.set(student.toJson());
-    StudentsDto data = student.copyWith(id: dbRef.id);
-    await getRefId(dbRef.id).set(data.toJson());
+      await dbRef.set(student.toJson());
+      StudentsDto data = student.copyWith(id: dbRef.id);
+      await getRefId(dbRef.id).set(data.toJson());
+
+     
+    } catch (error) {
+      throw Exception('error getting student to database $error');
+    }
   }
 
+  @override
   Future<List<StudentsDto>> getStudentsList() async {
     try {
       final dbRef = await firestore.collection(collectionPath).get();
@@ -30,16 +40,38 @@ class StudentsRepository extends StudentsRepositoryProtocol {
         return result;
       }
       throw Exception('docs are empty and length < 0');
-    } catch (e) {
-      throw Exception('Error getting stundets: $e');
+    } catch (error) {
+      throw Exception('Error getting stundets: $error');
     }
   }
 
+  ///[UpdateDocId]
   DocumentReference<Map<String, dynamic>> getRefId(String id) =>
       firestore.collection(collectionPath).doc(id);
 
   @override
+  Future<StudentsDto> getStudent(String studentId) async {
+    final DocumentSnapshot<Map<String, dynamic>> dbRef =
+        await firestore.collection(collectionPath).doc(studentId).get();
+    if (dbRef.data() != null && dbRef.exists)
+      return StudentsDto.fromJson(dbRef.data()!);
+    throw Exception('No document found');
+  }
+
+  @override
   Future<void> deleteStudent(String studentId) async {
     await firestore.collection(collectionPath).doc(studentId).delete();
+  }
+
+  @override
+  Future<void> updateStudent(StudentsDto student) async {
+    try {
+      await firestore
+          .collection(collectionPath)
+          .doc(student.id)
+          .update(student.toJson());
+    } catch (error) {
+      throw Exception('Error while updating database $error');
+    }
   }
 }

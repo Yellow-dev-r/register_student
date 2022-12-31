@@ -20,6 +20,8 @@ class _TextFieldContainer extends ConsumerState<TextFieldContainer> {
   Widget build(BuildContext context) {
     final maxWidth = MediaQuery.of(context).size.width;
     return Container(
+        decoration: BoxDecoration(
+            border: Border.all(color: Color(0XFF7A7D81).withOpacity(.3))),
         width: widget.width > 0 ? widget.width : maxWidth * 0.075,
         child: TextField(
           maxLines: widget.maxLines,

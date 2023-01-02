@@ -46,7 +46,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
             onPressed: () => getRoute(route),
             child: Text(
               verifyPath(route) ? '' : route,
-              style: GoogleFonts.montserrat(),
+              style: GoogleFonts.montserrat(fontSize: 18),
             )))
         .toList();
     return Scaffold(
@@ -66,7 +66,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                 children: [
                   Text(
                     'Estudiantes Registrados',
-                    style: GoogleFonts.montserrat(),
+                    style: GoogleFonts.montserrat(fontSize: 18),
                   ),
                   ElevatedButton(
                       onPressed: () {
@@ -76,7 +76,10 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                   onSucess: (condition) {
                                     setState(() {});
                                   },
-                                  title: Text('Registro'),
+                                  title: Text(
+                                    'Registro',
+                                    style: GoogleFonts.montserrat(fontSize: 18),
+                                  ),
                                 )));
                       },
                       child: Container(
@@ -86,7 +89,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                             Icon(Icons.add),
                             Text(
                               'Nuevo estudiante',
-                              style: GoogleFonts.montserrat(),
+                              style: GoogleFonts.montserrat(fontSize: 18),
                             )
                           ],
                         ),
@@ -115,12 +118,35 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                 rows: _studentList
                                     .map((student) => DataRow(cells: [
                                           DataCell(Text(
-                                              '${student.registeredDate}')),
-                                          DataCell(Text('${student.name}')),
-                                          DataCell(Text('${student.lastName}')),
-                                          DataCell(Text('${student.phone}')),
-                                          DataCell(Text('${student.email}')),
-                                          DataCell(Text('${student.gender}')),
+                                            '${student.registeredDate}',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
+                                          )),
+                                          DataCell(Text(
+                                            '${student.name}',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
+                                          )),
+                                          DataCell(Text(
+                                            '${student.lastName}',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
+                                          )),
+                                          DataCell(Text(
+                                            '${student.phone}',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
+                                          )),
+                                          DataCell(Text(
+                                            '${student.email}',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
+                                          )),
+                                          DataCell(Text(
+                                            '${student.gender}',
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
+                                          )),
                                           DataCell(Row(
                                             children: [
                                               InkWell(
@@ -135,7 +161,12 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                                               setState(() {});
                                                             },
                                                             title: Text(
-                                                                'Registro'),
+                                                              'Registro',
+                                                              style: GoogleFonts
+                                                                  .montserrat(
+                                                                      fontSize:
+                                                                          18),
+                                                            ),
                                                           ))),
                                                   child: Icon(Icons.edit)),
                                               InkWell(
@@ -150,12 +181,21 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                                 itemBuilder: (context) {
                                                   return <PopupMenuEntry>[
                                                     PopupMenuItem(
-                                                      child:
-                                                          Text('Calificacion'),
+                                                      child: Text(
+                                                        'Calificacion',
+                                                        style: GoogleFonts
+                                                            .montserrat(
+                                                                fontSize: 18),
+                                                      ),
                                                       onTap: () {},
                                                     ),
                                                     PopupMenuItem(
-                                                      child: Text('Asistencia'),
+                                                      child: Text(
+                                                        'Asistencia',
+                                                        style: GoogleFonts
+                                                            .montserrat(
+                                                                fontSize: 18),
+                                                      ),
                                                       onTap: () {},
                                                     ),
                                                   ];
@@ -168,7 +208,12 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                           ));
                     }
                     return Center(
-                      child: Text('No data found'),
+                      child: Text(
+                        'No data found',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 18,
+                        ),
+                      ),
                     );
                   }),
             ],

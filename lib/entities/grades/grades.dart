@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:x_mansion/entities/students/students.dart';
 
 part 'grades.freezed.dart';
 part 'grades.g.dart';

@@ -81,7 +81,12 @@ class _GradesForm extends ConsumerState<GradesForm> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Primer parcial'),
+                      Text(
+                        'Primer parcial',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 18,
+                        ),
+                      ),
                       SizedBox(
                         height: 6,
                       ),
@@ -90,7 +95,12 @@ class _GradesForm extends ConsumerState<GradesForm> {
                         hint: grades.firstTerm,
                       ),
                       SizedBox(height: 12),
-                      Text('Segundo Parcial'),
+                      Text(
+                        'Segundo Parcial',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 18,
+                        ),
+                      ),
                       SizedBox(
                         height: 6,
                       ),
@@ -99,7 +109,12 @@ class _GradesForm extends ConsumerState<GradesForm> {
                         hint: grades.midTerm,
                       ),
                       SizedBox(height: 12),
-                      Text('Examen Final'),
+                      Text(
+                        'Examen Final',
+                        style: GoogleFonts.montserrat(
+                          fontSize: 18,
+                        ),
+                      ),
                       SizedBox(
                         height: 6,
                       ),
@@ -123,7 +138,7 @@ class _GradesForm extends ConsumerState<GradesForm> {
                                 },
                                 child: Text(
                                   'Guardar',
-                                  style: GoogleFonts.montserrat(),
+                                  style: GoogleFonts.montserrat(fontSize: 18),
                                 ))
                           ],
                         ),
@@ -136,7 +151,7 @@ class _GradesForm extends ConsumerState<GradesForm> {
             return Container(
               child: Text(
                 'Error while getting register form',
-                style: GoogleFonts.montserrat(),
+                style: GoogleFonts.montserrat(fontSize: 18),
               ),
             );
           }),
@@ -169,16 +184,7 @@ class _GradesForm extends ConsumerState<GradesForm> {
     }).toList();
     final studentData = student.copyWith(
         asignaturesGrades: gradesDtoData.map((e) => e.toJson()).toList());
-    // students = StudentsDto(
-    //     id: id,
-    //     registeredDate: registeredDate,
-    //     name: name,
-    //     lastName: lastName,
-    //     phone: phone,
-    //     email: email,
-    //     studentDescription: studentDescription,
-    //     gender: gender!,
-    //     asignaturesGrades: student.asignaturesGrades);
+
     StudentsRepository data = StudentsRepository();
 
     await data.updateStudent(studentData);

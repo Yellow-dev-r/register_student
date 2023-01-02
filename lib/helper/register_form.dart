@@ -57,7 +57,7 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
         padding: const EdgeInsets.symmetric(horizontal: 48),
         child: Container(
           width: (width * 0.15) + 12,
-          height: 320,
+          height: 350,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -90,7 +90,7 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
               ),
               SizedBox(height: 12),
               Container(
-                width: width * 0.075,
+                width: width * 0.2,
                 decoration: BoxDecoration(
                     border:
                         Border.all(color: Color(0XFF7A7D81).withOpacity(.3))),

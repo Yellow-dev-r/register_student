@@ -13,9 +13,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i4;
 import 'package:flutter/material.dart' as _i5;
-import 'package:x_mansion/ui/attendance/attendance.dart' as _i3;
-import 'package:x_mansion/ui/grades/grades.dart' as _i2;
-import 'package:x_mansion/ui/home/home.dart' as _i1;
+
+import '../ui/attendance/attendance.dart' as _i3;
+import '../ui/grades/grades.dart' as _i2;
+import '../ui/home/home.dart' as _i1;
 
 class AppRouter extends _i4.RootStackRouter {
   AppRouter([_i5.GlobalKey<_i5.NavigatorState>? navigatorKey])
@@ -24,19 +25,19 @@ class AppRouter extends _i4.RootStackRouter {
   @override
   final Map<String, _i4.PageFactory> pagesMap = {
     HomeScreenRoute.name: (routeData) {
-      return _i4.AdaptivePage<dynamic>(
+      return _i4.CupertinoPageX<dynamic>(
         routeData: routeData,
         child: _i1.HomeScreenView(),
       );
     },
     GradesScreenRoute.name: (routeData) {
-      return _i4.AdaptivePage<dynamic>(
+      return _i4.CupertinoPageX<dynamic>(
         routeData: routeData,
         child: _i2.GradesScreenView(),
       );
     },
     AttendanceScreenRoute.name: (routeData) {
-      return _i4.AdaptivePage<dynamic>(
+      return _i4.CupertinoPageX<dynamic>(
         routeData: routeData,
         child: _i3.AttendanceScreenView(),
       );

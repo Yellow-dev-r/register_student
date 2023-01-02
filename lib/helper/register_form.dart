@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:x_mansion/entities/grades/grades.dart';
 import 'package:x_mansion/entities/students/students.dart';
 import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/text_field_container.dart';
@@ -103,7 +100,7 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
                     child: DropdownButton(
                         hint: Text(
                           'Genero',
-                          style: GoogleFonts.montserrat(),
+                          style: GoogleFonts.montserrat(fontSize: 18),
                         ),
                         items: dropDownOptions
                             .map<DropdownMenuItem<String>>((String gender) {
@@ -130,12 +127,18 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
                         onPressed: () {
                           mainNavigator.router.pop(context);
                         },
-                        child: Text('Cancelar')),
+                        child: Text(
+                          'Cancelar',
+                          style: GoogleFonts.montserrat(fontSize: 18),
+                        )),
                     TextButton(
                         onPressed: () async {
                           registerStudent(context);
                         },
-                        child: Text('Registrar'))
+                        child: Text(
+                          'Registrar',
+                          style: GoogleFonts.montserrat(fontSize: 18),
+                        ))
                   ],
                 ),
               )
@@ -171,7 +174,7 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
           children: [
             Text(
               'Error por favor verificar campos',
-              style: GoogleFonts.montserrat(),
+              style: GoogleFonts.montserrat(fontSize: 18),
             )
           ]);
 

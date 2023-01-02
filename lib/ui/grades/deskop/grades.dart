@@ -18,12 +18,7 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
   @override
   Widget build(BuildContext context) {
     final studentFuture = data.getStudentsList();
-    GradesDto gradesDto = GradesDto(
-        alphabeticGrade: '',
-        asignature: '',
-        finalTerm: '',
-        firstTerm: '',
-        midTerm: '');
+
     return Scaffold(
       body: SingleChildScrollView(
           child: FutureBuilder(
@@ -47,6 +42,12 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                   return PageWrapper(
                     child: Column(
                       children: [
+                        SizedBox(height: 12),
+                        Text(
+                          'Califcaciones',
+                          style: GoogleFonts.montserrat(
+                              fontSize: 32, fontWeight: FontWeight.bold),
+                        ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 48),
                           child: Card(
@@ -61,7 +62,8 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                       .map((e) => DataColumn(
                                               label: Text(
                                             e,
-                                            style: GoogleFonts.montserrat(),
+                                            style: GoogleFonts.montserrat(
+                                                fontSize: 18),
                                           )))
                                       .toList(),
                                   rows: student.map((e) {
@@ -101,7 +103,8 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                     return DataRow(cells: [
                                       DataCell(Text(
                                         '${e.name} ${e.lastName}',
-                                        style: GoogleFonts.montserrat(),
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 18),
                                       )),
                                       DataCell(InkWell(
                                         onTap: () => showDialog(
@@ -121,7 +124,8 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                                 )),
                                         child: Text(
                                           _asignatureGrades1,
-                                          style: GoogleFonts.montserrat(),
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 18),
                                         ),
                                       )),
                                       DataCell(InkWell(
@@ -130,8 +134,9 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                             builder: (builder) => GradesForm(
                                                   title: Text(
                                                     gradesData[1].asignature,
-                                                    style: GoogleFonts
-                                                        .montserrat(),
+                                                    style:
+                                                        GoogleFonts.montserrat(
+                                                            fontSize: 18),
                                                   ),
                                                   onSucess: ((condition) {
                                                     setState(() {});
@@ -142,7 +147,8 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                                 )),
                                         child: Text(
                                           _asignatureGrades2,
-                                          style: GoogleFonts.montserrat(),
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 18),
                                         ),
                                       )),
                                       DataCell(InkWell(
@@ -151,8 +157,9 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                             builder: (builder) => GradesForm(
                                                   title: Text(
                                                     gradesData[2].asignature,
-                                                    style: GoogleFonts
-                                                        .montserrat(),
+                                                    style:
+                                                        GoogleFonts.montserrat(
+                                                            fontSize: 18),
                                                   ),
                                                   onSucess: ((condition) {
                                                     setState(() {});
@@ -163,7 +170,8 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                                 )),
                                         child: Text(
                                           _asignatureGrades3,
-                                          style: GoogleFonts.montserrat(),
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 18),
                                         ),
                                       )),
                                       DataCell(InkWell(
@@ -172,8 +180,9 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                             builder: (builder) => GradesForm(
                                                   title: Text(
                                                     gradesData[3].asignature,
-                                                    style: GoogleFonts
-                                                        .montserrat(),
+                                                    style:
+                                                        GoogleFonts.montserrat(
+                                                            fontSize: 18),
                                                   ),
                                                   onSucess: ((condition) {
                                                     setState(() {});
@@ -184,12 +193,14 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                                                 )),
                                         child: Text(
                                           _asignatureGrades4,
-                                          style: GoogleFonts.montserrat(),
+                                          style: GoogleFonts.montserrat(
+                                              fontSize: 18),
                                         ),
                                       )),
                                       DataCell(Text(
                                         'promedio WIP',
-                                        style: GoogleFonts.montserrat(),
+                                        style: GoogleFonts.montserrat(
+                                            fontSize: 18),
                                       )),
                                     ]);
                                   }).toList()),
@@ -200,7 +211,27 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                     ),
                   );
                 } else
-                  return SizedBox();
+                  return PageWrapper(
+                    child: Column(
+                      children: [
+                        SizedBox(height: 24),
+                        Text(
+                          'Calificaciones',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(height: 12),
+                        Text(
+                          'Actualmente no se encuentra ningun estudiante inscrito',
+                          style: GoogleFonts.montserrat(
+                            fontSize: 24,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
               })),
     );
   }

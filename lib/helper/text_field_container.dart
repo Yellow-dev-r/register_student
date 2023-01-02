@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class TextFieldContainer extends ConsumerStatefulWidget {
@@ -24,6 +25,7 @@ class _TextFieldContainer extends ConsumerState<TextFieldContainer> {
             border: Border.all(color: Color(0XFF7A7D81).withOpacity(.3))),
         width: widget.width > 0 ? widget.width : maxWidth * 0.075,
         child: TextField(
+          style: GoogleFonts.montserrat(fontSize: 18),
           maxLines: widget.maxLines,
           controller: widget.controller,
           decoration: InputDecoration(

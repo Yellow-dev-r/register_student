@@ -1,5 +1,3 @@
-
-
 import 'package:x_mansion/navigation/app_router.gr.dart';
 
 abstract class CustomNavigator {
@@ -16,5 +14,4 @@ class MainNavigator implements CustomNavigator {
   final AppRouter router;
 }
 
-CustomNavigator mainNavigator =
-    MainNavigator(router: AppRouter());
+CustomNavigator mainNavigator = MainNavigator(router: AppRouter());

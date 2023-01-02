@@ -4,23 +4,18 @@ import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/navigation/router_observer.dart';
 
 class MyApp extends ConsumerStatefulWidget {
-  const MyApp({super.key});
-  
   @override
   ConsumerState<MyApp> createState() => _MyApp();
-
-  // This widget is the root of your application.
 }
+
 class _MyApp extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routeInformationParser:  mainNavigator.router.defaultRouteParser(),
+      routeInformationParser: mainNavigator.router.defaultRouteParser(),
       routerDelegate: mainNavigator.router.delegate(
-        navigatorObservers: () => [AutouRoteObserver()]
+        navigatorObservers: () => [AutouRoteObserver()],
       ),
     );
-    
   }
-
 }

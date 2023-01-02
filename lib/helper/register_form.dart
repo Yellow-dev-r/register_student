@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:x_mansion/entities/students/students.dart';
 import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/text_field_container.dart';
+import 'package:x_mansion/mock/attendance_mock.dart';
 import 'package:x_mansion/mock/grades_dto.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
@@ -160,7 +161,11 @@ class _RegisterFormBuilder extends ConsumerState<RegisterFormBuilder> {
           email: _emailController.text,
           studentDescription: _descriptionController.text,
           gender: _gender!,
-          asignaturesGrades: gradesDtoMock.map((e) => e.toJson()).toList());
+          asignaturesGrades:
+              gradesDtoMock.map((grades) => grades.toJson()).toList(),
+          attendance: attendanceDtoList.attendance
+              .map((attendance) => attendance.toJson())
+              .toList());
     StudentsRepository data = StudentsRepository();
     if (students != null) {
       data.getStudentToDB(students!);

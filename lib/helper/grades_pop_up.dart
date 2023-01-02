@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:x_mansion/entities/grades/grades.dart';
 import 'package:x_mansion/entities/students/students.dart';
+import 'package:x_mansion/helper/fields_validart.dart';
 import 'package:x_mansion/helper/text_field_container.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
@@ -130,7 +131,10 @@ class _GradesForm extends ConsumerState<GradesForm> {
                                 onPressed: () {
                                   mainNavigator.router.pop(context);
                                 },
-                                child: Text('Cancelar')),
+                                child: Text(
+                                  'Cancelar',
+                                  style: GoogleFonts.montserrat(fontSize: 18),
+                                )),
                             TextButton(
                                 onPressed: () async {
                                   await onSavePressed(student, context,
@@ -172,25 +176,31 @@ class _GradesForm extends ConsumerState<GradesForm> {
     final List<GradesDto> gradesList = student.asignaturesGrades
         .map((asignature) => GradesDto.fromJson(asignature))
         .toList();
-    final gradesDtoData = gradesList.map((asignature) {
-      GradesDto data = asignature;
-      if (asignature.asignature == asignatureId)
-        data = asignature.copyWith(
-          finalTerm: finalTerm,
-          midTerm: midTerm,
-          firstTerm: firstTerm,
-        );
-      return data;
-    }).toList();
-    final studentData = student.copyWith(
-        asignaturesGrades: gradesDtoData.map((e) => e.toJson()).toList());
 
-    StudentsRepository data = StudentsRepository();
+    final isFirstTermValid = validateTextGrade(firstTerm) &&
+        validateTextGrade(midTerm) &&
+        validateTextFinalTerm(finalTerm);
 
-    await data.updateStudent(studentData);
+    if (isFirstTermValid) {
+      final gradesDtoData = gradesList.map((asignature) {
+        GradesDto data = asignature;
+        if (asignature.asignature == asignatureId)
+          data = asignature.copyWith(
+            finalTerm: finalTerm,
+            midTerm: midTerm,
+            firstTerm: firstTerm,
+          );
+        return data;
+      }).toList();
+      final studentData = student.copyWith(
+          asignaturesGrades: gradesDtoData.map((e) => e.toJson()).toList());
 
-    widget.onSucess(true);
+      StudentsRepository data = StudentsRepository();
 
-    mainNavigator.router.pop(context);
+      await data.updateStudent(studentData);
+
+      widget.onSucess(true);
+      mainNavigator.router.pop(context);
+    } else {}
   }
 }

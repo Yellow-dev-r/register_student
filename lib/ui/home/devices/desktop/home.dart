@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:x_mansion/entities/students/students.dart';
 import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/edit_form.dart';
+import 'package:x_mansion/helper/no_data_screen.dart';
 import 'package:x_mansion/helper/register_form.dart';
 import 'package:x_mansion/navigation/app_router.gr.dart';
 import 'package:x_mansion/navigation/main_navigator.dart';
@@ -32,7 +33,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
         mainNavigator.router.push(GradesScreenRoute());
         break;
       case "Asistencia":
-        //TODO: asistencia
+        mainNavigator.router.push(AttendanceScreenRoute());
         break;
     }
   }
@@ -100,7 +101,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                   future: studentList,
                   builder: (context, snapshot) {
                     if (snapshot.connectionState == ConnectionState.waiting)
-                      return CircularProgressIndicator();
+                      return Center(child: CircularProgressIndicator());
                     if (snapshot.data != null) {
                       final _studentList = snapshot.data!;
                       return Card(
@@ -207,13 +208,8 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                     .toList()),
                           ));
                     }
-                    return Center(
-                      child: Text(
-                        'No data found',
-                        style: GoogleFonts.montserrat(
-                          fontSize: 18,
-                        ),
-                      ),
+                    return NoDataScreen(
+                      title: 'Registro',
                     );
                   }),
             ],

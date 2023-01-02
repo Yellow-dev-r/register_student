@@ -210,7 +210,8 @@ class _EditFormBuilder extends ConsumerState<EditFormBuilder> {
         email: email,
         studentDescription: studentDescription,
         gender: gender!,
-        asignaturesGrades: student.asignaturesGrades);
+        asignaturesGrades: student.asignaturesGrades,
+        attendance: student.attendance);
     StudentsRepository data = StudentsRepository();
     if (students != null) {
       data.updateStudent(students!);

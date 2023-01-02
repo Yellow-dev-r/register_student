@@ -10,8 +10,7 @@ import 'package:x_mansion/ui/home/home.dart';
     routes: <AutoRoute>[
       AutoRoute(page: HomeScreenView, path: '/landing', initial: true),
       AutoRoute(page: GradesScreenView, path: '/grades'),
-      AutoRoute(page: AttendanceScreenView, path: '/attendance', children: [
-        AutoRoute(page: AttendanceView, path: AttendanceView.path)
-      ]),
+      AutoRoute(page: AttendanceScreenView, path: '/attendance'),
+      AutoRoute(page: AttendanceView, path: '/attendance/:id')
     ])
 class $AppRouter {}

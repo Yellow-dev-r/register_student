@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:x_mansion/entities/grades/grades.dart';
 import 'package:x_mansion/helper/constans.dart';
 import 'package:x_mansion/helper/grades_pop_up.dart';
+import 'package:x_mansion/helper/no_data_screen.dart';
 import 'package:x_mansion/networking/firebase_docs.dart';
 import 'package:x_mansion/ui/grades/helper/grades_helper.dart';
 import 'package:x_mansion/ui/home/widgets/page_wrapper.dart';
@@ -25,7 +26,7 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
               future: studentFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting)
-                  return CircularProgressIndicator();
+                  return Center(child: CircularProgressIndicator());
                 if (snapshot.data != null) {
                   final student = snapshot.data!;
                   List<GradesDto> gradesList = [];
@@ -210,28 +211,10 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                       ],
                     ),
                   );
-                } else
-                  return PageWrapper(
-                    child: Column(
-                      children: [
-                        SizedBox(height: 24),
-                        Text(
-                          'Calificaciones',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        SizedBox(height: 12),
-                        Text(
-                          'Actualmente no se encuentra ningun estudiante inscrito',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 24,
-                          ),
-                        ),
-                      ],
-                    ),
-                  );
+                }
+                return NoDataScreen(
+                  title: 'Calificaciones',
+                );
               })),
     );
   }

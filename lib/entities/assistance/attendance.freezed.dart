@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'attendance.dart';
 
@@ -26,30 +26,6 @@ mixin _$AttendanceDto {
   String get day3 => throw _privateConstructorUsedError;
   String get day4 => throw _privateConstructorUsedError;
   String get day5 => throw _privateConstructorUsedError;
-  String get day6 => throw _privateConstructorUsedError;
-  String get day7 => throw _privateConstructorUsedError;
-  String get day8 => throw _privateConstructorUsedError;
-  String get day9 => throw _privateConstructorUsedError;
-  String get day10 => throw _privateConstructorUsedError;
-  String get day11 => throw _privateConstructorUsedError;
-  String get day12 => throw _privateConstructorUsedError;
-  String get day13 => throw _privateConstructorUsedError;
-  String get day14 => throw _privateConstructorUsedError;
-  String get day15 => throw _privateConstructorUsedError;
-  String get day16 => throw _privateConstructorUsedError;
-  String get day17 => throw _privateConstructorUsedError;
-  String get day18 => throw _privateConstructorUsedError;
-  String get day19 => throw _privateConstructorUsedError;
-  String get day20 => throw _privateConstructorUsedError;
-  String get day21 => throw _privateConstructorUsedError;
-  String get day22 => throw _privateConstructorUsedError;
-  String get day23 => throw _privateConstructorUsedError;
-  String get day24 => throw _privateConstructorUsedError;
-  String get day25 => throw _privateConstructorUsedError;
-  String get day26 => throw _privateConstructorUsedError;
-  String get day27 => throw _privateConstructorUsedError;
-  String get day28 => throw _privateConstructorUsedError;
-  String get day29 => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,31 +45,7 @@ abstract class $AttendanceDtoCopyWith<$Res> {
       String day2,
       String day3,
       String day4,
-      String day5,
-      String day6,
-      String day7,
-      String day8,
-      String day9,
-      String day10,
-      String day11,
-      String day12,
-      String day13,
-      String day14,
-      String day15,
-      String day16,
-      String day17,
-      String day18,
-      String day19,
-      String day20,
-      String day21,
-      String day22,
-      String day23,
-      String day24,
-      String day25,
-      String day26,
-      String day27,
-      String day28,
-      String day29});
+      String day5});
 }
 
 /// @nodoc
@@ -115,30 +67,6 @@ class _$AttendanceDtoCopyWithImpl<$Res, $Val extends AttendanceDto>
     Object? day3 = null,
     Object? day4 = null,
     Object? day5 = null,
-    Object? day6 = null,
-    Object? day7 = null,
-    Object? day8 = null,
-    Object? day9 = null,
-    Object? day10 = null,
-    Object? day11 = null,
-    Object? day12 = null,
-    Object? day13 = null,
-    Object? day14 = null,
-    Object? day15 = null,
-    Object? day16 = null,
-    Object? day17 = null,
-    Object? day18 = null,
-    Object? day19 = null,
-    Object? day20 = null,
-    Object? day21 = null,
-    Object? day22 = null,
-    Object? day23 = null,
-    Object? day24 = null,
-    Object? day25 = null,
-    Object? day26 = null,
-    Object? day27 = null,
-    Object? day28 = null,
-    Object? day29 = null,
   }) {
     return _then(_value.copyWith(
       asignature: null == asignature
@@ -165,102 +93,6 @@ class _$AttendanceDtoCopyWithImpl<$Res, $Val extends AttendanceDto>
           ? _value.day5
           : day5 // ignore: cast_nullable_to_non_nullable
               as String,
-      day6: null == day6
-          ? _value.day6
-          : day6 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day7: null == day7
-          ? _value.day7
-          : day7 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day8: null == day8
-          ? _value.day8
-          : day8 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day9: null == day9
-          ? _value.day9
-          : day9 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day10: null == day10
-          ? _value.day10
-          : day10 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day11: null == day11
-          ? _value.day11
-          : day11 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day12: null == day12
-          ? _value.day12
-          : day12 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day13: null == day13
-          ? _value.day13
-          : day13 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day14: null == day14
-          ? _value.day14
-          : day14 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day15: null == day15
-          ? _value.day15
-          : day15 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day16: null == day16
-          ? _value.day16
-          : day16 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day17: null == day17
-          ? _value.day17
-          : day17 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day18: null == day18
-          ? _value.day18
-          : day18 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day19: null == day19
-          ? _value.day19
-          : day19 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day20: null == day20
-          ? _value.day20
-          : day20 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day21: null == day21
-          ? _value.day21
-          : day21 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day22: null == day22
-          ? _value.day22
-          : day22 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day23: null == day23
-          ? _value.day23
-          : day23 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day24: null == day24
-          ? _value.day24
-          : day24 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day25: null == day25
-          ? _value.day25
-          : day25 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day26: null == day26
-          ? _value.day26
-          : day26 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day27: null == day27
-          ? _value.day27
-          : day27 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day28: null == day28
-          ? _value.day28
-          : day28 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day29: null == day29
-          ? _value.day29
-          : day29 // ignore: cast_nullable_to_non_nullable
-              as String,
     ) as $Val);
   }
 }
@@ -279,31 +111,7 @@ abstract class _$$_AttendanceDtoCopyWith<$Res>
       String day2,
       String day3,
       String day4,
-      String day5,
-      String day6,
-      String day7,
-      String day8,
-      String day9,
-      String day10,
-      String day11,
-      String day12,
-      String day13,
-      String day14,
-      String day15,
-      String day16,
-      String day17,
-      String day18,
-      String day19,
-      String day20,
-      String day21,
-      String day22,
-      String day23,
-      String day24,
-      String day25,
-      String day26,
-      String day27,
-      String day28,
-      String day29});
+      String day5});
 }
 
 /// @nodoc
@@ -323,30 +131,6 @@ class __$$_AttendanceDtoCopyWithImpl<$Res>
     Object? day3 = null,
     Object? day4 = null,
     Object? day5 = null,
-    Object? day6 = null,
-    Object? day7 = null,
-    Object? day8 = null,
-    Object? day9 = null,
-    Object? day10 = null,
-    Object? day11 = null,
-    Object? day12 = null,
-    Object? day13 = null,
-    Object? day14 = null,
-    Object? day15 = null,
-    Object? day16 = null,
-    Object? day17 = null,
-    Object? day18 = null,
-    Object? day19 = null,
-    Object? day20 = null,
-    Object? day21 = null,
-    Object? day22 = null,
-    Object? day23 = null,
-    Object? day24 = null,
-    Object? day25 = null,
-    Object? day26 = null,
-    Object? day27 = null,
-    Object? day28 = null,
-    Object? day29 = null,
   }) {
     return _then(_$_AttendanceDto(
       asignature: null == asignature
@@ -373,102 +157,6 @@ class __$$_AttendanceDtoCopyWithImpl<$Res>
           ? _value.day5
           : day5 // ignore: cast_nullable_to_non_nullable
               as String,
-      day6: null == day6
-          ? _value.day6
-          : day6 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day7: null == day7
-          ? _value.day7
-          : day7 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day8: null == day8
-          ? _value.day8
-          : day8 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day9: null == day9
-          ? _value.day9
-          : day9 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day10: null == day10
-          ? _value.day10
-          : day10 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day11: null == day11
-          ? _value.day11
-          : day11 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day12: null == day12
-          ? _value.day12
-          : day12 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day13: null == day13
-          ? _value.day13
-          : day13 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day14: null == day14
-          ? _value.day14
-          : day14 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day15: null == day15
-          ? _value.day15
-          : day15 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day16: null == day16
-          ? _value.day16
-          : day16 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day17: null == day17
-          ? _value.day17
-          : day17 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day18: null == day18
-          ? _value.day18
-          : day18 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day19: null == day19
-          ? _value.day19
-          : day19 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day20: null == day20
-          ? _value.day20
-          : day20 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day21: null == day21
-          ? _value.day21
-          : day21 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day22: null == day22
-          ? _value.day22
-          : day22 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day23: null == day23
-          ? _value.day23
-          : day23 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day24: null == day24
-          ? _value.day24
-          : day24 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day25: null == day25
-          ? _value.day25
-          : day25 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day26: null == day26
-          ? _value.day26
-          : day26 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day27: null == day27
-          ? _value.day27
-          : day27 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day28: null == day28
-          ? _value.day28
-          : day28 // ignore: cast_nullable_to_non_nullable
-              as String,
-      day29: null == day29
-          ? _value.day29
-          : day29 // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -482,31 +170,7 @@ class _$_AttendanceDto implements _AttendanceDto {
       required this.day2,
       required this.day3,
       required this.day4,
-      required this.day5,
-      required this.day6,
-      required this.day7,
-      required this.day8,
-      required this.day9,
-      required this.day10,
-      required this.day11,
-      required this.day12,
-      required this.day13,
-      required this.day14,
-      required this.day15,
-      required this.day16,
-      required this.day17,
-      required this.day18,
-      required this.day19,
-      required this.day20,
-      required this.day21,
-      required this.day22,
-      required this.day23,
-      required this.day24,
-      required this.day25,
-      required this.day26,
-      required this.day27,
-      required this.day28,
-      required this.day29});
+      required this.day5});
 
   factory _$_AttendanceDto.fromJson(Map<String, dynamic> json) =>
       _$$_AttendanceDtoFromJson(json);
@@ -523,58 +187,10 @@ class _$_AttendanceDto implements _AttendanceDto {
   final String day4;
   @override
   final String day5;
-  @override
-  final String day6;
-  @override
-  final String day7;
-  @override
-  final String day8;
-  @override
-  final String day9;
-  @override
-  final String day10;
-  @override
-  final String day11;
-  @override
-  final String day12;
-  @override
-  final String day13;
-  @override
-  final String day14;
-  @override
-  final String day15;
-  @override
-  final String day16;
-  @override
-  final String day17;
-  @override
-  final String day18;
-  @override
-  final String day19;
-  @override
-  final String day20;
-  @override
-  final String day21;
-  @override
-  final String day22;
-  @override
-  final String day23;
-  @override
-  final String day24;
-  @override
-  final String day25;
-  @override
-  final String day26;
-  @override
-  final String day27;
-  @override
-  final String day28;
-  @override
-  final String day29;
 
   @override
   String toString() {
-    return 'AttendanceDto(asignature: $asignature, day1: $day1, day2: $day2, day3: $day3, day4: $day4, day5: $day5, day6: $day6, day7: $day7, day8: $day8, day9: $day9, day10: $day10, day11: $day11, day12: $day12, day13: $day13, day14: $day14, day15: $day15, day16: $day16, day17: $day17, day18: $day18, day19: $day19, day20: $day20, day21: $day21, day22: $day22, day23: $day23, day24: $day24, day25: $day25, day26: $day26, day27: $day27, day28: $day28, day29: $day29)';
+    return 'AttendanceDto(asignature: $asignature, day1: $day1, day2: $day2, day3: $day3, day4: $day4, day5: $day5)';
   }
 
   @override
@@ -588,68 +204,13 @@ class _$_AttendanceDto implements _AttendanceDto {
             (identical(other.day2, day2) || other.day2 == day2) &&
             (identical(other.day3, day3) || other.day3 == day3) &&
             (identical(other.day4, day4) || other.day4 == day4) &&
-            (identical(other.day5, day5) || other.day5 == day5) &&
-            (identical(other.day6, day6) || other.day6 == day6) &&
-            (identical(other.day7, day7) || other.day7 == day7) &&
-            (identical(other.day8, day8) || other.day8 == day8) &&
-            (identical(other.day9, day9) || other.day9 == day9) &&
-            (identical(other.day10, day10) || other.day10 == day10) &&
-            (identical(other.day11, day11) || other.day11 == day11) &&
-            (identical(other.day12, day12) || other.day12 == day12) &&
-            (identical(other.day13, day13) || other.day13 == day13) &&
-            (identical(other.day14, day14) || other.day14 == day14) &&
-            (identical(other.day15, day15) || other.day15 == day15) &&
-            (identical(other.day16, day16) || other.day16 == day16) &&
-            (identical(other.day17, day17) || other.day17 == day17) &&
-            (identical(other.day18, day18) || other.day18 == day18) &&
-            (identical(other.day19, day19) || other.day19 == day19) &&
-            (identical(other.day20, day20) || other.day20 == day20) &&
-            (identical(other.day21, day21) || other.day21 == day21) &&
-            (identical(other.day22, day22) || other.day22 == day22) &&
-            (identical(other.day23, day23) || other.day23 == day23) &&
-            (identical(other.day24, day24) || other.day24 == day24) &&
-            (identical(other.day25, day25) || other.day25 == day25) &&
-            (identical(other.day26, day26) || other.day26 == day26) &&
-            (identical(other.day27, day27) || other.day27 == day27) &&
-            (identical(other.day28, day28) || other.day28 == day28) &&
-            (identical(other.day29, day29) || other.day29 == day29));
+            (identical(other.day5, day5) || other.day5 == day5));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        asignature,
-        day1,
-        day2,
-        day3,
-        day4,
-        day5,
-        day6,
-        day7,
-        day8,
-        day9,
-        day10,
-        day11,
-        day12,
-        day13,
-        day14,
-        day15,
-        day16,
-        day17,
-        day18,
-        day19,
-        day20,
-        day21,
-        day22,
-        day23,
-        day24,
-        day25,
-        day26,
-        day27,
-        day28,
-        day29
-      ]);
+  int get hashCode =>
+      Object.hash(runtimeType, asignature, day1, day2, day3, day4, day5);
 
   @JsonKey(ignore: true)
   @override
@@ -672,31 +233,7 @@ abstract class _AttendanceDto implements AttendanceDto {
       required final String day2,
       required final String day3,
       required final String day4,
-      required final String day5,
-      required final String day6,
-      required final String day7,
-      required final String day8,
-      required final String day9,
-      required final String day10,
-      required final String day11,
-      required final String day12,
-      required final String day13,
-      required final String day14,
-      required final String day15,
-      required final String day16,
-      required final String day17,
-      required final String day18,
-      required final String day19,
-      required final String day20,
-      required final String day21,
-      required final String day22,
-      required final String day23,
-      required final String day24,
-      required final String day25,
-      required final String day26,
-      required final String day27,
-      required final String day28,
-      required final String day29}) = _$_AttendanceDto;
+      required final String day5}) = _$_AttendanceDto;
 
   factory _AttendanceDto.fromJson(Map<String, dynamic> json) =
       _$_AttendanceDto.fromJson;
@@ -713,54 +250,6 @@ abstract class _AttendanceDto implements AttendanceDto {
   String get day4;
   @override
   String get day5;
-  @override
-  String get day6;
-  @override
-  String get day7;
-  @override
-  String get day8;
-  @override
-  String get day9;
-  @override
-  String get day10;
-  @override
-  String get day11;
-  @override
-  String get day12;
-  @override
-  String get day13;
-  @override
-  String get day14;
-  @override
-  String get day15;
-  @override
-  String get day16;
-  @override
-  String get day17;
-  @override
-  String get day18;
-  @override
-  String get day19;
-  @override
-  String get day20;
-  @override
-  String get day21;
-  @override
-  String get day22;
-  @override
-  String get day23;
-  @override
-  String get day24;
-  @override
-  String get day25;
-  @override
-  String get day26;
-  @override
-  String get day27;
-  @override
-  String get day28;
-  @override
-  String get day29;
   @override
   @JsonKey(ignore: true)
   _$$_AttendanceDtoCopyWith<_$_AttendanceDto> get copyWith =>
@@ -859,7 +348,6 @@ class _$_AttendanceDtoList implements _AttendanceDtoList {
   final List<AttendanceDto> _attendance;
   @override
   List<AttendanceDto> get attendance {
-    if (_attendance is EqualUnmodifiableListView) return _attendance;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_attendance);
   }

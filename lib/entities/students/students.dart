@@ -15,6 +15,7 @@ class StudentsDto with _$StudentsDto {
     required DateTime registeredDate,
     required String studentDescription,
     required List<Map<String, dynamic>> asignaturesGrades,
+    required List<Map<String, dynamic>> attendance,
     //TODO: assitance logic
     // required AssitanceDto assitance,
   }) = _StudentsDto;

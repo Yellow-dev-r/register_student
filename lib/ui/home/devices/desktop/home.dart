@@ -32,7 +32,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
         mainNavigator.router.push(GradesScreenRoute());
         break;
       case "Asistencia":
-        //TODO: asistencia
+        mainNavigator.router.push(AttendanceScreenRoute());
         break;
     }
   }

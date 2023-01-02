@@ -19,6 +19,9 @@ _$_StudentsDto _$$_StudentsDtoFromJson(Map<String, dynamic> json) =>
       asignaturesGrades: (json['asignaturesGrades'] as List<dynamic>)
           .map((e) => e as Map<String, dynamic>)
           .toList(),
+      attendance: (json['attendance'] as List<dynamic>)
+          .map((e) => e as Map<String, dynamic>)
+          .toList(),
     );
 
 Map<String, dynamic> _$$_StudentsDtoToJson(_$_StudentsDto instance) =>
@@ -32,4 +35,5 @@ Map<String, dynamic> _$$_StudentsDtoToJson(_$_StudentsDto instance) =>
       'registeredDate': instance.registeredDate.toIso8601String(),
       'studentDescription': instance.studentDescription,
       'asignaturesGrades': instance.asignaturesGrades,
+      'attendance': instance.attendance,
     };

@@ -30,6 +30,8 @@ mixin _$StudentsDto {
   String get studentDescription => throw _privateConstructorUsedError;
   List<Map<String, dynamic>> get asignaturesGrades =>
       throw _privateConstructorUsedError;
+  List<Map<String, dynamic>> get attendance =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -52,7 +54,8 @@ abstract class $StudentsDtoCopyWith<$Res> {
       String gender,
       DateTime registeredDate,
       String studentDescription,
-      List<Map<String, dynamic>> asignaturesGrades});
+      List<Map<String, dynamic>> asignaturesGrades,
+      List<Map<String, dynamic>> attendance});
 }
 
 /// @nodoc
@@ -77,6 +80,7 @@ class _$StudentsDtoCopyWithImpl<$Res, $Val extends StudentsDto>
     Object? registeredDate = null,
     Object? studentDescription = null,
     Object? asignaturesGrades = null,
+    Object? attendance = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -115,6 +119,10 @@ class _$StudentsDtoCopyWithImpl<$Res, $Val extends StudentsDto>
           ? _value.asignaturesGrades
           : asignaturesGrades // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
+      attendance: null == attendance
+          ? _value.attendance
+          : attendance // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>,
     ) as $Val);
   }
 }
@@ -136,7 +144,8 @@ abstract class _$$_StudentsDtoCopyWith<$Res>
       String gender,
       DateTime registeredDate,
       String studentDescription,
-      List<Map<String, dynamic>> asignaturesGrades});
+      List<Map<String, dynamic>> asignaturesGrades,
+      List<Map<String, dynamic>> attendance});
 }
 
 /// @nodoc
@@ -159,6 +168,7 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
     Object? registeredDate = null,
     Object? studentDescription = null,
     Object? asignaturesGrades = null,
+    Object? attendance = null,
   }) {
     return _then(_$_StudentsDto(
       id: null == id
@@ -197,6 +207,10 @@ class __$$_StudentsDtoCopyWithImpl<$Res>
           ? _value._asignaturesGrades
           : asignaturesGrades // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>,
+      attendance: null == attendance
+          ? _value._attendance
+          : attendance // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>,
     ));
   }
 }
@@ -213,8 +227,10 @@ class _$_StudentsDto implements _StudentsDto {
       required this.gender,
       required this.registeredDate,
       required this.studentDescription,
-      required final List<Map<String, dynamic>> asignaturesGrades})
-      : _asignaturesGrades = asignaturesGrades;
+      required final List<Map<String, dynamic>> asignaturesGrades,
+      required final List<Map<String, dynamic>> attendance})
+      : _asignaturesGrades = asignaturesGrades,
+        _attendance = attendance;
 
   factory _$_StudentsDto.fromJson(Map<String, dynamic> json) =>
       _$$_StudentsDtoFromJson(json);
@@ -244,9 +260,17 @@ class _$_StudentsDto implements _StudentsDto {
     return EqualUnmodifiableListView(_asignaturesGrades);
   }
 
+  final List<Map<String, dynamic>> _attendance;
+  @override
+  List<Map<String, dynamic>> get attendance {
+    if (_attendance is EqualUnmodifiableListView) return _attendance;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_attendance);
+  }
+
   @override
   String toString() {
-    return 'StudentsDto(id: $id, name: $name, lastName: $lastName, phone: $phone, email: $email, gender: $gender, registeredDate: $registeredDate, studentDescription: $studentDescription, asignaturesGrades: $asignaturesGrades)';
+    return 'StudentsDto(id: $id, name: $name, lastName: $lastName, phone: $phone, email: $email, gender: $gender, registeredDate: $registeredDate, studentDescription: $studentDescription, asignaturesGrades: $asignaturesGrades, attendance: $attendance)';
   }
 
   @override
@@ -266,7 +290,9 @@ class _$_StudentsDto implements _StudentsDto {
             (identical(other.studentDescription, studentDescription) ||
                 other.studentDescription == studentDescription) &&
             const DeepCollectionEquality()
-                .equals(other._asignaturesGrades, _asignaturesGrades));
+                .equals(other._asignaturesGrades, _asignaturesGrades) &&
+            const DeepCollectionEquality()
+                .equals(other._attendance, _attendance));
   }
 
   @JsonKey(ignore: true)
@@ -281,7 +307,8 @@ class _$_StudentsDto implements _StudentsDto {
       gender,
       registeredDate,
       studentDescription,
-      const DeepCollectionEquality().hash(_asignaturesGrades));
+      const DeepCollectionEquality().hash(_asignaturesGrades),
+      const DeepCollectionEquality().hash(_attendance));
 
   @JsonKey(ignore: true)
   @override
@@ -299,16 +326,16 @@ class _$_StudentsDto implements _StudentsDto {
 
 abstract class _StudentsDto implements StudentsDto {
   factory _StudentsDto(
-          {required final String id,
-          required final String name,
-          required final String lastName,
-          required final String phone,
-          required final String email,
-          required final String gender,
-          required final DateTime registeredDate,
-          required final String studentDescription,
-          required final List<Map<String, dynamic>> asignaturesGrades}) =
-      _$_StudentsDto;
+      {required final String id,
+      required final String name,
+      required final String lastName,
+      required final String phone,
+      required final String email,
+      required final String gender,
+      required final DateTime registeredDate,
+      required final String studentDescription,
+      required final List<Map<String, dynamic>> asignaturesGrades,
+      required final List<Map<String, dynamic>> attendance}) = _$_StudentsDto;
 
   factory _StudentsDto.fromJson(Map<String, dynamic> json) =
       _$_StudentsDto.fromJson;
@@ -331,6 +358,8 @@ abstract class _StudentsDto implements StudentsDto {
   String get studentDescription;
   @override
   List<Map<String, dynamic>> get asignaturesGrades;
+  @override
+  List<Map<String, dynamic>> get attendance;
   @override
   @JsonKey(ignore: true)
   _$$_StudentsDtoCopyWith<_$_StudentsDto> get copyWith =>

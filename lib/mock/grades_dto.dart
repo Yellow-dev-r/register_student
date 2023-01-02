@@ -7,32 +7,22 @@ List<GradesDto> gradesDtoMock = [
       firstTerm: '0',
       midTerm: '0',
       alphabeticGrade: 'n/a'),
-
-       GradesDto(
+  GradesDto(
       asignature: 'MAT126',
       finalTerm: '0',
       firstTerm: '0',
       midTerm: '0',
       alphabeticGrade: 'n/a'),
-
-       GradesDto(
+  GradesDto(
       asignature: 'NAT403',
       finalTerm: '0',
       firstTerm: '0',
       midTerm: '0',
       alphabeticGrade: 'n/a'),
-
-       GradesDto(
+  GradesDto(
       asignature: 'SOC281',
       finalTerm: '0',
       firstTerm: '0',
       midTerm: '0',
       alphabeticGrade: 'n/a'),
-      
 ];
-  //     'ESP101',
-  // 'MAT126',
-  // 'NAT403',
-  // 'SOC281',
-
-  

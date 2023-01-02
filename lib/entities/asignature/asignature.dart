@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:x_mansion/entities/assistance/assistance.dart';
+import 'package:x_mansion/entities/assistance/attendance.dart';
 import 'package:x_mansion/entities/grades/grades.dart';
 import 'package:x_mansion/entities/schedule/schedule.dart';
 

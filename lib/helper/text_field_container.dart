@@ -33,7 +33,11 @@ class _TextFieldContainer extends ConsumerState<TextFieldContainer> {
             isDense: true,
             filled: true,
             border: OutlineInputBorder(),
-            enabledBorder: OutlineInputBorder(borderSide: BorderSide.none),
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+              width: 1,
+              color: Colors.red,
+            )),
           ),
         ));
   }

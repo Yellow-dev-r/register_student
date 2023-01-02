@@ -24,15 +24,15 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
 
   getRoute(String ruta) {
     switch (ruta) {
-      case "Registro":
+      case homeTitle:
         bool condition = verifyPath(ruta);
         if (!condition) mainNavigator.router.push(HomeScreenRoute());
 
         break;
-      case "Calificaciones":
+      case gradesTitle:
         mainNavigator.router.push(GradesScreenRoute());
         break;
-      case "Asistencia":
+      case attendanceTitle:
         mainNavigator.router.push(AttendanceScreenRoute());
         break;
     }
@@ -78,7 +78,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                     setState(() {});
                                   },
                                   title: Text(
-                                    'Registro',
+                                    homeTitle,
                                     style: GoogleFonts.montserrat(fontSize: 18),
                                   ),
                                 )));
@@ -162,7 +162,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                                               setState(() {});
                                                             },
                                                             title: Text(
-                                                              'Registro',
+                                                              homeTitle,
                                                               style: GoogleFonts
                                                                   .montserrat(
                                                                       fontSize:
@@ -183,7 +183,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                                   return <PopupMenuEntry>[
                                                     PopupMenuItem(
                                                       child: Text(
-                                                        'Calificacion',
+                                                        gradesTitle,
                                                         style: GoogleFonts
                                                             .montserrat(
                                                                 fontSize: 18),
@@ -192,7 +192,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                                                     ),
                                                     PopupMenuItem(
                                                       child: Text(
-                                                        'Asistencia',
+                                                        attendanceTitle,
                                                         style: GoogleFonts
                                                             .montserrat(
                                                                 fontSize: 18),
@@ -209,7 +209,7 @@ class _DesktopHomePage extends ConsumerState<DesktopHomePage> {
                           ));
                     }
                     return NoDataScreen(
-                      title: 'Registro',
+                      title: homeTitle,
                     );
                   }),
             ],

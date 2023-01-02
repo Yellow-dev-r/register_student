@@ -45,7 +45,7 @@ class _AttendanceView extends ConsumerState<AttendanceView> {
                 child: Column(
                   children: [
                     Text(
-                      'Califcaciones',
+                      attendanceTitle,
                       style: GoogleFonts.montserrat(
                           fontSize: 32, fontWeight: FontWeight.bold),
                     ),
@@ -209,7 +209,7 @@ class _AttendanceView extends ConsumerState<AttendanceView> {
               );
             }
             return NoDataScreen(
-              title: 'Asistencia',
+              title: attendanceTitle,
             );
           }),
     );

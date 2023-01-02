@@ -23,7 +23,7 @@ class _DesktopAttendancePage extends ConsumerState<DesktopAttendancePage> {
           children: [
             SizedBox(height: 12),
             Text(
-              'Asitencia',
+              attendanceTitle,
               style: GoogleFonts.montserrat(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,

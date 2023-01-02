@@ -45,7 +45,7 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                       children: [
                         SizedBox(height: 12),
                         Text(
-                          'Califcaciones',
+                          gradesTitle,
                           style: GoogleFonts.montserrat(
                               fontSize: 32, fontWeight: FontWeight.bold),
                         ),
@@ -213,7 +213,7 @@ class _DesktopGradesPage extends ConsumerState<DesktopGradesPage> {
                   );
                 }
                 return NoDataScreen(
-                  title: 'Calificaciones',
+                  title: gradesTitle,
                 );
               })),
     );
